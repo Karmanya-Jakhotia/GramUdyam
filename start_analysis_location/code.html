@@ -1,0 +1,309 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Start Analysis - GramUdyam</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#30312e",
+                      "on-secondary-fixed": "#390c00",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-high": "#eae8e4",
+                      "secondary-fixed": "#ffdbd0",
+                      "tertiary-container": "#674b00",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed-variant": "#783116",
+                      "surface-container-low": "#f5f3ef",
+                      "on-background": "#1b1c1a",
+                      "surface-container-highest": "#e4e2de",
+                      "on-secondary-container": "#762f15",
+                      "surface-bright": "#fbf9f5",
+                      "on-secondary": "#ffffff",
+                      "primary-container": "#2d5a27",
+                      "surface": "#fbf9f5",
+                      "on-primary-container": "#9dd090",
+                      "background": "#fbf9f5",
+                      "on-primary-fixed-variant": "#23501e",
+                      "surface-variant": "#e4e2de",
+                      "secondary": "#96472b",
+                      "secondary-container": "#fe9977",
+                      "tertiary": "#4b3600",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#002201",
+                      "surface-dim": "#dbdad6",
+                      "tertiary-fixed": "#ffdea0",
+                      "outline": "#72796e",
+                      "inverse-on-surface": "#f2f0ed",
+                      "on-tertiary-fixed": "#261900",
+                      "secondary-fixed-dim": "#ffb59c",
+                      "surface-container": "#efeeea",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-container": "#f1ba36",
+                      "error": "#ba1a1a",
+                      "outline-variant": "#c2c9bb",
+                      "primary-fixed-dim": "#a1d494",
+                      "primary": "#154212",
+                      "on-tertiary-fixed-variant": "#5c4300",
+                      "on-primary": "#ffffff",
+                      "on-surface": "#1b1c1a",
+                      "inverse-primary": "#a1d494",
+                      "surface-tint": "#3b6934",
+                      "tertiary-fixed-dim": "#f6be3b",
+                      "on-surface-variant": "#42493e",
+                      "primary-fixed": "#bcf0ae"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "sm": "12px",
+                      "lg": "40px",
+                      "xl": "64px",
+                      "margin-mobile": "20px",
+                      "md": "24px",
+                      "xs": "4px",
+                      "base": "8px",
+                      "margin-desktop": "120px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Outfit"],
+                      "body-md": ["Outfit"],
+                      "caption": ["Outfit"],
+                      "label-md": ["Outfit"],
+                      "display": ["Outfit"],
+                      "headline-lg-mobile": ["Outfit"],
+                      "headline-md": ["Outfit"],
+                      "headline-lg": ["Outfit"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { font-family: 'Outfit', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-outlined.fill { font-variation-settings: 'FILL' 1; }
+        
+        /* Custom scrollbar for an organic feel */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e4e2de; border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #c2c9bb; }
+    </style>
+</head>
+<body class="overflow-x-hidden bg-background text-on-background h-screen flex overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface shadow-sm z-40">
+<div class="p-md bg-surface-container-low flex flex-col items-center justify-center border-b border-surface-container-highest">
+<h1 class="font-display text-[32px] leading-tight text-primary font-bold tracking-tight">GramUdyam</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Rural Advisor</p>
+</div>
+<div class="flex-1 overflow-y-auto py-md px-base flex flex-col gap-1">
+<!-- Inactive -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT hover:bg-surface-container-high transition-colors text-on-surface-variant font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<!-- Active -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT transition-transform hover:bg-surface-container-high text-primary font-bold border-r-4 border-primary bg-primary-container/10 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px] fill">analytics</span>
+<span class="font-label-md text-label-md">Start Analysis</span>
+</a>
+<!-- Inactive -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT hover:bg-surface-container-high transition-colors text-on-surface-variant font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">insights</span>
+<span class="font-label-md text-label-md">Market Opportunity</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT hover:bg-surface-container-high transition-colors text-on-surface-variant font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+<span class="font-label-md text-label-md">Competitors</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT hover:bg-surface-container-high transition-colors text-on-surface-variant font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">compare_arrows</span>
+<span class="font-label-md text-label-md">Business Comparison</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT hover:bg-surface-container-high transition-colors text-on-surface-variant font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+<span class="font-label-md text-label-md">Financial Plan</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT hover:bg-surface-container-high transition-colors text-on-surface-variant font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+<span class="font-label-md text-label-md">Risk &amp; Cash Flow</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT hover:bg-surface-container-high transition-colors text-on-surface-variant font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">description</span>
+<span class="font-label-md text-label-md">Business Report</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-DEFAULT hover:bg-surface-container-high transition-colors text-on-surface-variant font-medium mt-auto" href="#">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+<span class="font-label-md text-label-md">Voice Assistant</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col min-w-0 md:ml-64 relative bg-surface-container-low">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full px-md py-sm sticky top-0 z-30 bg-surface shadow-sm">
+<div class="flex items-center gap-3 md:hidden">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="font-headline-md text-headline-md font-bold text-primary">GramUdyam</span>
+</div>
+<div class="hidden md:block">
+<span class="font-label-md text-label-md text-on-surface-variant">Step 1 of 4 • Location Setup</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container active:opacity-80">
+<span class="material-symbols-outlined">language</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container active:opacity-80">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container active:opacity-80">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<button class="ml-2 hidden sm:flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary-container rounded-full font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+                    Talk to GramUdyam
+                </button>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 overflow-y-auto p-margin-mobile md:p-lg flex justify-center items-start">
+<!-- Wizard Container -->
+<div class="w-full max-w-4xl bg-surface-container-lowest rounded-xl p-6 md:p-10 shadow-[0_4px_20px_rgba(21,66,18,0.08)] mt-4 md:mt-8">
+<!-- Progress Indicator -->
+<div class="mb-8 md:mb-12">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-md text-label-md text-primary font-bold">Location</span>
+<span class="font-caption text-caption text-on-surface-variant">Step 1 of 4</span>
+</div>
+<div class="flex gap-2 w-full h-2 rounded-full overflow-hidden bg-surface-variant">
+<div class="w-1/4 h-full bg-primary rounded-full"></div>
+<div class="w-1/4 h-full bg-transparent"></div>
+<div class="w-1/4 h-full bg-transparent"></div>
+<div class="w-1/4 h-full bg-transparent"></div>
+</div>
+</div>
+<!-- Header Content -->
+<div class="mb-8 max-w-2xl">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-4">
+                        Where do you want to start your business?
+                    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-start gap-2 bg-surface-container-low p-4 rounded-lg border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary mt-0.5">info</span>
+                        We use your location to understand nearby customers, markets, and competitors to give you the most accurate advice.
+                    </p>
+</div>
+<!-- Main Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+<!-- Left: Form Inputs -->
+<div class="lg:col-span-3 flex flex-col gap-5">
+<!-- State Dropdown -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant pl-1">State</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">map</span>
+<select class="w-full appearance-none bg-surface border border-outline-variant rounded-lg py-3.5 pl-12 pr-10 font-body-md text-body-md text-on-background focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-shadow cursor-pointer">
+<option disabled="" selected="" value="">Select your state</option>
+<option value="maharashtra">Maharashtra</option>
+<option value="gujarat">Gujarat</option>
+<option value="rajasthan">Rajasthan</option>
+<option value="madhya-pradesh">Madhya Pradesh</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline pointer-events-none">arrow_drop_down</span>
+</div>
+</div>
+<!-- District Dropdown -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant pl-1">District</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">location_city</span>
+<input class="w-full bg-surface border border-outline-variant rounded-lg py-3.5 pl-12 pr-10 font-body-md text-body-md text-on-background placeholder-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-shadow" placeholder="Search or select district" type="text">
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+</div>
+</div>
+<!-- Block & Village Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<!-- Block -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant pl-1">Block / Tehsil</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">signpost</span>
+<input class="w-full bg-surface border border-outline-variant rounded-lg py-3.5 pl-10 pr-4 font-body-md text-body-md text-on-background placeholder-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-shadow" placeholder="Enter block" type="text">
+</div>
+</div>
+<!-- Village -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface-variant pl-1">Village / Town</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">holiday_village</span>
+<input class="w-full bg-surface border border-outline-variant rounded-lg py-3.5 pl-10 pr-4 font-body-md text-body-md text-on-background placeholder-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-shadow" placeholder="Enter village" type="text">
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Map Preview & Location Button -->
+<div class="lg:col-span-2 flex flex-col gap-4">
+<button class="w-full py-3.5 px-4 bg-secondary-fixed/30 hover:bg-secondary-fixed/50 border border-secondary-fixed text-on-secondary-container rounded-lg font-label-md text-label-md font-bold flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[20px]">my_location</span>
+                            Use my current location
+                        </button>
+<div class="relative w-full h-48 md:h-full min-h-[200px] rounded-lg overflow-hidden border border-surface-container-highest shadow-inner bg-surface-container group">
+<!-- Map Placeholder (Using location intent) -->
+<img alt="Map preview area" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" data-location="Rural India Map View" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxOpM_fePsw-D3-sXbjyvpJCAAksZuxu3-CSC-tkzeoMk1TWNKbpFQtw7f4r1rUvYzBmURbBJj-zzOV-3TezM4Ke7Buo8ZswJOEzlps7SfNBaA0R_gaQ5OPlfYR0b1YqTKCt-b-0tVbqJURpBIF6iL2U7kgQRYuy7lm2YfVcn_ruV9YGhdS06amUfAUcRiMMkrRT5eZuAj9Fq9CM6QFNmnmyRN4pdb4vjOblZL6l59icSMGg35OJ-Jpg">
+<!-- Overlay Pin -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined text-primary fill text-[32px] drop-shadow-md">location_on</span>
+</div>
+</div>
+<!-- Overlay Text -->
+<div class="absolute bottom-3 left-3 right-3 bg-surface-container-lowest/90 backdrop-blur-sm rounded px-3 py-2 border border-surface-container-highest shadow-sm">
+<p class="font-caption text-caption text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">map</span>
+                                    Map preview will update upon selection
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="mt-10 pt-6 border-t border-surface-container-highest flex justify-between items-center">
+<button class="px-6 py-3.5 text-on-surface-variant font-label-md text-label-md hover:bg-surface-container rounded-lg transition-colors">
+                        Cancel
+                    </button>
+<button class="px-8 py-3.5 bg-primary text-on-primary rounded-lg font-label-md text-label-md font-bold flex items-center gap-2 hover:bg-primary/90 hover:shadow-md transition-all active:scale-[0.98]">
+                        Next Step
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+<script src="../app.js"></script>
+</body></html>
+

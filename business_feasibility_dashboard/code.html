@@ -1,0 +1,327 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Business Feasibility Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#30312e",
+                        "on-secondary-fixed": "#390c00",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#eae8e4",
+                        "secondary-fixed": "#ffdbd0",
+                        "tertiary-container": "#674b00",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#783116",
+                        "surface-container-low": "#f5f3ef",
+                        "on-background": "#1b1c1a",
+                        "surface-container-highest": "#e4e2de",
+                        "on-secondary-container": "#762f15",
+                        "surface-bright": "#fbf9f5",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#2d5a27",
+                        "surface": "#fbf9f5",
+                        "on-primary-container": "#9dd090",
+                        "background": "#fbf9f5",
+                        "on-primary-fixed-variant": "#23501e",
+                        "surface-variant": "#e4e2de",
+                        "secondary": "#96472b",
+                        "secondary-container": "#fe9977",
+                        "tertiary": "#4b3600",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#002201",
+                        "surface-dim": "#dbdad6",
+                        "tertiary-fixed": "#ffdea0",
+                        "outline": "#72796e",
+                        "inverse-on-surface": "#f2f0ed",
+                        "on-tertiary-fixed": "#261900",
+                        "secondary-fixed-dim": "#ffb59c",
+                        "surface-container": "#efeeea",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#f1ba36",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#c2c9bb",
+                        "primary-fixed-dim": "#a1d494",
+                        "primary": "#154212",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1b1c1a",
+                        "inverse-primary": "#a1d494",
+                        "surface-tint": "#3b6934",
+                        "tertiary-fixed-dim": "#f6be3b",
+                        "on-surface-variant": "#42493e",
+                        "primary-fixed": "#bcf0ae"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "margin-mobile": "20px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "margin-desktop": "120px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Outfit"],
+                        "body-md": ["Outfit"],
+                        "caption": ["Outfit"],
+                        "label-md": ["Outfit"],
+                        "display": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "headline-md": ["Outfit"],
+                        "headline-lg": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .shadow-glow {
+            box-shadow: 0 4px 20px 0 rgba(21, 66, 18, 0.15);
+        }
+
+        .circular-chart {
+            display: block;
+            margin: 0 auto;
+            max-width: 80%;
+            max-height: 250px;
+        }
+        .circle-bg {
+            fill: none;
+            stroke: #efeeea;
+            stroke-width: 3.8;
+        }
+        .circle {
+            fill: none;
+            stroke-width: 2.8;
+            stroke-linecap: round;
+            animation: progress 1s ease-out forwards;
+        }
+        @keyframes progress {
+            0% { stroke-dasharray: 0 100; }
+        }
+        .percentage {
+            fill: #154212;
+            font-family: 'Outfit';
+            font-size: 0.5em;
+            text-anchor: middle;
+            font-weight: 700;
+        }
+        .score-label {
+            fill: #42493e;
+            font-family: 'Outfit';
+            font-size: 0.15em;
+            text-anchor: middle;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden bg-surface text-on-surface font-body-md antialiased min-h-screen flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- Side Navigation -->
+<nav class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface dark:bg-surface-dim border-r border-surface-container-low dark:border-surface-container py-md px-base shadow-sm z-40">
+<div class="px-md mb-xl flex items-center gap-sm">
+<div class="h-10 w-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-headline-md">psychiatry</span>
+</div>
+<div>
+<h1 class="font-display text-headline-md text-primary dark:text-primary-fixed-dim">GramUdyam</h1>
+<p class="font-caption text-caption text-on-surface-variant">Rural Advisor</p>
+</div>
+</div>
+<ul class="flex flex-col gap-sm flex-grow">
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-primary font-bold border-r-4 border-primary bg-primary-container/10 transition-transform hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-md text-label-md">Start Analysis</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-label-md text-label-md">Market Opportunity</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-md text-label-md">Competitors</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">compare_arrows</span>
+<span class="font-label-md text-label-md">Business Comparison</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-label-md text-label-md">Financial Plan</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">warning</span>
+<span class="font-label-md text-label-md">Risk &amp; Cash Flow</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-md text-label-md">Business Report</span>
+</a>
+</li>
+<li class="mt-auto">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">mic</span>
+<span class="font-label-md text-label-md">Voice Assistant</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-grow md:ml-64 w-full flex flex-col min-h-screen">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center w-full px-md py-sm sticky top-0 z-50 bg-surface dark:bg-surface-dim shadow-sm md:hidden">
+<h2 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">GramUdyam</h2>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">language</span></button>
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">help</span></button>
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">account_circle</span></button>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-md py-sm rounded-full hidden sm:block">Talk to GramUdyam</button>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-margin-mobile md:p-lg max-w-[1280px] mx-auto w-full flex-grow flex flex-col gap-lg">
+<!-- Page Header -->
+<header>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-xs">Your Dairy Business in Shirgaon, Maval</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Feasibility Analysis &amp; AI Recommendations</p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter md:gap-md">
+<!-- Main Score Card (Span 8) -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-md shadow-glow flex flex-col justify-between">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-md">Business Readiness Score</h3>
+<div class="flex flex-col sm:flex-row items-center gap-lg">
+<!-- Circular Chart -->
+<div class="w-48 h-48 sm:w-64 sm:h-64 flex-shrink-0">
+<svg class="circular-chart text-tertiary-fixed-dim drop-shadow-md" viewBox="0 0 36 36">
+<path class="circle-bg" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+<path class="circle stroke-current" d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831" stroke-dasharray="82, 100"></path>
+<text class="percentage" x="18" y="19">82</text>
+<text class="score-label" x="18" y="24">/100</text>
+</svg>
+</div>
+<!-- Score Breakdown -->
+<div class="flex-grow w-full space-y-md">
+<div>
+<div class="flex justify-between mb-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Market Opportunity</span>
+<span class="font-label-md text-label-md font-bold text-primary">88</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Competition</span>
+<span class="font-label-md text-label-md font-bold text-secondary">74</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-secondary h-2 rounded-full" style="width: 74%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Capital Adequacy</span>
+<span class="font-label-md text-label-md font-bold text-primary">81</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 81%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Financial Snapshot (Span 4) -->
+<div class="md:col-span-4 bg-primary-container text-on-primary-container rounded-xl p-md shadow-sm flex flex-col justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-surface-container-lowest mb-md">Capital Overview</h3>
+<div class="bg-surface-container-lowest/10 rounded-lg p-sm mb-sm backdrop-blur-sm">
+<p class="font-label-md text-label-md opacity-80">Recommended Project Cost</p>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-surface-container-lowest font-bold">₹8.2L</p>
+</div>
+<div class="bg-surface-container-lowest/10 rounded-lg p-sm backdrop-blur-sm">
+<p class="font-label-md text-label-md opacity-80">Max Estimated Loan</p>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-surface-container-lowest font-bold">₹7.38L</p>
+</div>
+</div>
+<button class="mt-md w-full bg-surface-container-lowest text-primary-container font-label-md text-label-md py-sm rounded-lg font-bold hover:bg-surface transition-colors shadow-sm">View Full Plan</button>
+</div>
+<!-- AI Advice Card (Span 12) -->
+<div class="md:col-span-12 bg-surface-container-lowest rounded-xl shadow-glow overflow-hidden relative">
+<!-- Accent Border -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="p-md pl-lg flex flex-col sm:flex-row gap-md items-start sm:items-center">
+<div class="h-12 w-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[28px]" data-weight="fill">lightbulb</span>
+</div>
+<div class="flex-grow">
+<h4 class="font-label-md text-label-md text-primary font-bold mb-xs uppercase tracking-wide">AI Advisor Insight</h4>
+<p class="font-body-lg text-body-lg text-on-surface">
+                                Dairy is highly viable in Shirgaon, but starting at the maximum <span class="font-bold">₹10L</span> project size may create unnecessary repayment pressure. Consider our recommended <span class="font-bold">₹8.2L</span> optimized setup to balance risk and growth.
+                            </p>
+</div>
+<button class="flex-shrink-0 bg-primary text-on-primary font-label-md text-label-md px-md py-sm rounded-lg min-h-[48px] shadow-sm hover:bg-primary/90 transition-colors flex items-center gap-sm">
+<span class="material-symbols-outlined">tune</span>
+                            Adjust Parameters
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script src="../app.js"></script>
+</body></html>
+

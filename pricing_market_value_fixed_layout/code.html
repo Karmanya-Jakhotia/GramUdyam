@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pricing &amp; Market Value - GramUdyam</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#30312e",
+                        "on-secondary-fixed": "#390c00",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#eae8e4",
+                        "secondary-fixed": "#ffdbd0",
+                        "tertiary-container": "#674b00",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#783116",
+                        "surface-container-low": "#f5f3ef",
+                        "on-background": "#1b1c1a",
+                        "surface-container-highest": "#e4e2de",
+                        "on-secondary-container": "#762f15",
+                        "surface-bright": "#fbf9f5",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#2d5a27",
+                        "surface": "#fbf9f5",
+                        "on-primary-container": "#9dd090",
+                        "background": "#fbf9f5",
+                        "on-primary-fixed-variant": "#23501e",
+                        "surface-variant": "#e4e2de",
+                        "secondary": "#96472b",
+                        "secondary-container": "#fe9977",
+                        "tertiary": "#4b3600",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#002201",
+                        "surface-dim": "#dbdad6",
+                        "tertiary-fixed": "#ffdea0",
+                        "outline": "#72796e",
+                        "inverse-on-surface": "#f2f0ed",
+                        "on-tertiary-fixed": "#261900",
+                        "secondary-fixed-dim": "#ffb59c",
+                        "surface-container": "#efeeea",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#f1ba36",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#c2c9bb",
+                        "primary-fixed-dim": "#a1d494",
+                        "primary": "#154212",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1b1c1a",
+                        "inverse-primary": "#a1d494",
+                        "surface-tint": "#3b6934",
+                        "tertiary-fixed-dim": "#f6be3b",
+                        "on-surface-variant": "#42493e",
+                        "primary-fixed": "#bcf0ae"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "margin-mobile": "20px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "margin-desktop": "120px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Outfit"],
+                        "body-md": ["Outfit"],
+                        "caption": ["Outfit"],
+                        "label-md": ["Outfit"],
+                        "display": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "headline-md": ["Outfit"],
+                        "headline-lg": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glow-shadow {
+            box-shadow: 0 4px 20px 0 rgba(21, 66, 18, 0.15);
+        }
+        .interactive-element:active {
+            box-shadow: 0 2px 10px 0 rgba(21, 66, 18, 0.1);
+            transform: translateY(2px);
+        }
+        .bg-pattern {
+            background-image: radial-gradient(circle at center, rgba(161, 212, 148, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden bg-surface text-on-surface font-body-md min-h-screen bg-pattern">
+<!-- Desktop Side Navigation -->
+<nav class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface shadow-sm py-md px-base z-40 bg-surface-container-low border-r border-surface-dim">
+<div class="mb-lg px-sm">
+<h1 class="font-display text-[32px] font-bold text-primary leading-tight">GramUdyam</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Rural Advisor</p>
+</div>
+<ul class="flex flex-col gap-xs flex-1 overflow-y-auto">
+<li class=""><a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-[0.98]" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>Home</a></li>
+<li class=""><a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-[0.98]" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">analytics</span>Start Analysis</a></li>
+<li class=""><a class="flex items-center gap-sm px-sm py-sm rounded-lg text-primary font-bold border-r-4 border-primary bg-primary-container/10 active:scale-[0.98]" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">insights</span>Market Opportunity</a></li>
+<li class=""><a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-[0.98]" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">groups</span>Competitors</a></li>
+<li class=""><a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-[0.98]" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">compare_arrows</span>Business Comparison</a></li>
+<li class=""><a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-[0.98]" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_balance_wallet</span>Financial Plan</a></li>
+<li class=""><a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-[0.98]" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">warning</span>Risk &amp; Cash Flow</a></li>
+<li class=""><a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-[0.98]" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">description</span>Business Report</a></li>
+<li class=""><a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors active:scale-[0.98]" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">mic</span>Voice Assistant</a></li>
+</ul>
+</nav>
+<!-- Main Wrapper -->
+<div class="md:pl-64 flex flex-col min-h-screen">
+<!-- Top Navigation -->
+<header class="flex justify-between items-center w-full px-md py-sm sticky top-0 z-50 bg-surface shadow-sm transition-all">
+<div class="md:hidden flex items-center gap-sm">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">GramUdyam</h1>
+</div>
+<div class="hidden md:block">
+<!-- Breadcrumbs or page title could go here on desktop -->
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-xs rounded-full text-on-surface-variant hover:text-primary transition-colors active:opacity-80"><span class="material-symbols-outlined">language</span></button>
+<button class="p-xs rounded-full text-on-surface-variant hover:text-primary transition-colors active:opacity-80"><span class="material-symbols-outlined">help</span></button>
+<button class="p-xs rounded-full text-on-surface-variant hover:text-primary transition-colors active:opacity-80"><span class="material-symbols-outlined">account_circle</span></button>
+<button class="hidden md:flex items-center gap-xs px-sm py-xs bg-primary text-on-primary rounded-full font-label-md text-label-md hover:bg-primary/90 transition-colors">Talk to GramUdyam</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full p-margin-mobile md:p-lg max-w-7xl mx-auto">
+<div class="mb-lg">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-xs">What price can your local market support?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Pricing &amp; Market Value analysis for Dairy products.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-md">
+<!-- Left Column: Product Cards (Bento style) -->
+<div class="lg:col-span-1 flex flex-col gap-sm">
+<!-- Milk Card -->
+<div class="bg-surface-container-lowest rounded-xl p-md glow-shadow relative overflow-hidden group hover:-translate-y-1 transition-transform">
+<div class="absolute top-0 right-0 p-sm opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+</div>
+<div class="flex justify-between items-start mb-sm relative z-10">
+<div>
+<span class="inline-block px-sm py-xs bg-primary-container/20 text-primary-fixed-variant rounded-full font-label-md text-label-md mb-xs">Daily Essential</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Milk</h3>
+</div>
+</div>
+<div class="mt-auto relative z-10">
+<p class="font-body-md text-body-md text-on-surface-variant">Current Local Range</p>
+<p class="font-display text-[40px] font-bold text-primary">₹58-64<span class="font-body-md text-body-md text-on-surface-variant"> / L</span></p>
+</div>
+</div>
+<!-- Paneer Card -->
+<div class="bg-surface-container-lowest rounded-xl p-md glow-shadow flex justify-between items-center hover:-translate-y-1 transition-transform">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Paneer</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Value Added</p>
+</div>
+<div class="text-right">
+<p class="font-headline-md text-headline-md text-secondary">₹330-380</p>
+<p class="font-caption text-caption text-on-surface-variant">/ kg</p>
+</div>
+</div>
+<!-- Curd Card -->
+<div class="bg-surface-container-lowest rounded-xl p-md glow-shadow flex justify-between items-center hover:-translate-y-1 transition-transform">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Curd</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Staple</p>
+</div>
+<div class="text-right">
+<p class="font-headline-md text-headline-md text-secondary">₹70-90</p>
+<p class="font-caption text-caption text-on-surface-variant">/ kg</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Recommendation & Slider (Bento span) -->
+<div class="lg:col-span-2 flex flex-col gap-md">
+<!-- Recommendation Card (Advice Style) -->
+<div class="bg-surface-container-lowest rounded-xl p-md md:p-lg glow-shadow border-l-4 border-primary">
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Advisor Insight</h3>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-md">Based on local demand density and competitor presence, positioning slightly above the lower bound captures volume while retaining margin.</p>
+<div class="bg-primary-container/10 p-md rounded-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-sm">
+<span class="font-label-md text-label-md text-primary-fixed-variant uppercase tracking-wider">Recommended Milk Price</span>
+<span class="font-display text-[32px] font-bold text-primary">₹61 <span class="font-body-lg text-body-lg text-primary-fixed-variant">/ litre</span></span>
+</div>
+</div>
+<!-- Market Price Range Slider Card -->
+<div class="bg-surface-container-lowest rounded-xl p-md md:p-lg glow-shadow flex-1 flex flex-col justify-center">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Market Price Range</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-xl">Visualizing your recommended price within the local spectrum.</p>
+<div class="relative w-full h-12 mb-md mt-lg">
+<!-- Background track representing the full range -->
+<div class="absolute top-1/2 left-0 w-full h-2 bg-surface-container-highest rounded-full -translate-y-1/2"></div>
+<!-- Highlighted track representing the common range (58-64) -->
+<div class="absolute top-1/2 left-[10%] w-[60%] h-2 bg-secondary/30 rounded-full -translate-y-1/2"></div>
+<!-- Markers -->
+<!-- Low -->
+<div class="absolute top-1/2 left-[10%] w-4 h-4 bg-secondary rounded-full -translate-y-1/2 -translate-x-1/2 shadow-sm border-2 border-surface-container-lowest flex flex-col items-center">
+<span class="absolute -bottom-8 font-caption text-caption text-on-surface-variant whitespace-nowrap">Low (₹58)</span>
+</div>
+<!-- Typical / Average (estimate) -->
+<div class="absolute top-1/2 left-[40%] w-3 h-3 bg-secondary-container rounded-full -translate-y-1/2 -translate-x-1/2 border-2 border-surface-container-lowest flex flex-col items-center">
+<span class="absolute -bottom-8 font-caption text-caption text-on-surface-variant whitespace-nowrap">Typical</span>
+</div>
+<!-- High -->
+<div class="absolute top-1/2 left-[70%] w-4 h-4 bg-secondary rounded-full -translate-y-1/2 -translate-x-1/2 shadow-sm border-2 border-surface-container-lowest flex flex-col items-center">
+<span class="absolute -bottom-8 font-caption text-caption text-on-surface-variant whitespace-nowrap">High (₹64)</span>
+</div>
+<!-- Recommended Marker -->
+<div class="absolute top-1/2 left-[30%] -translate-y-1/2 -translate-x-1/2 z-10 flex flex-col items-center">
+<div class="absolute -top-12 bg-primary text-on-primary font-label-md text-label-md px-sm py-xs rounded-lg shadow-md whitespace-nowrap after:content-[''] after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-4 after:border-transparent after:border-t-primary">
+                                    Recommended (₹61)
+                                </div>
+<div class="w-6 h-6 bg-primary rounded-full shadow-md border-4 border-surface-container-lowest"></div>
+</div>
+</div>
+<div class="mt-auto pt-lg text-center">
+<span class="inline-flex items-center gap-xs font-caption text-caption text-on-surface-variant bg-surface-container py-xs px-sm rounded-full">
+<span class="material-symbols-outlined text-[16px]">info</span>
+                                Indicative market estimate based on regional data
+                            </span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script src="../app.js"></script>
+</body></html>
+

@@ -1,0 +1,380 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>GramUdyam - Hyper-Local SWOT</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#30312e",
+                        "on-secondary-fixed": "#390c00",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#eae8e4",
+                        "secondary-fixed": "#ffdbd0",
+                        "tertiary-container": "#674b00",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#783116",
+                        "surface-container-low": "#f5f3ef",
+                        "on-background": "#1b1c1a",
+                        "surface-container-highest": "#e4e2de",
+                        "on-secondary-container": "#762f15",
+                        "surface-bright": "#fbf9f5",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#2d5a27",
+                        "surface": "#fbf9f5",
+                        "on-primary-container": "#9dd090",
+                        "background": "#fbf9f5",
+                        "on-primary-fixed-variant": "#23501e",
+                        "surface-variant": "#e4e2de",
+                        "secondary": "#96472b",
+                        "secondary-container": "#fe9977",
+                        "tertiary": "#4b3600",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#002201",
+                        "surface-dim": "#dbdad6",
+                        "tertiary-fixed": "#ffdea0",
+                        "outline": "#72796e",
+                        "inverse-on-surface": "#f2f0ed",
+                        "on-tertiary-fixed": "#261900",
+                        "secondary-fixed-dim": "#ffb59c",
+                        "surface-container": "#efeeea",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#f1ba36",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#c2c9bb",
+                        "primary-fixed-dim": "#a1d494",
+                        "primary": "#154212",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1b1c1a",
+                        "inverse-primary": "#a1d494",
+                        "surface-tint": "#3b6934",
+                        "tertiary-fixed-dim": "#f6be3b",
+                        "on-surface-variant": "#42493e",
+                        "primary-fixed": "#bcf0ae"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "margin-mobile": "20px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "margin-desktop": "120px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Outfit"],
+                        "body-md": ["Outfit"],
+                        "caption": ["Outfit"],
+                        "label-md": ["Outfit"],
+                        "display": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "headline-md": ["Outfit"],
+                        "headline-lg": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-shadow {
+            box-shadow: 0 4px 20px rgba(21, 66, 18, 0.15);
+        }
+        .interaction-sink:active {
+            transform: translateY(2px) scale(0.99);
+            box-shadow: 0 2px 10px rgba(21, 66, 18, 0.10);
+            background-color: var(--tw-colors-surface-container-low);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden bg-background text-on-background h-full font-body-md antialiased flex flex-col md:flex-row">
+<!-- Desktop Side Nav -->
+<nav class="hidden md:flex h-screen w-64 fixed left-0 top-0 bg-surface shadow-sm border-r border-surface-container-low z-40 flex-col py-md px-base transition-all duration-300">
+<div class="flex items-center gap-3 mb-xl px-sm">
+<img class="w-8 h-8 object-contain" data-alt="A minimalist logo representing a digital soil and agricultural technology theme, featuring subtle green leaves and tech nodes on a clean white background. High contrast, modern organic style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeiu-HFMW1Q81TtKvL0W9kwmou0_T_XZmPUE0Z0YpnznXPj1kFmGlJNCGb5Xb4XGyFMgUMSQBu3lNtwyhWcU65BmXRzKMO3_mzvi_3O5-XbZpVKMAFHSdEkZxUxbP0PowJxx-xG4c8U-virMisWgUUQJlKqi4nXJzBq0cVXLZAOmO0l5FJKg65Ki3pbADkL6Vm8FF_T_nx9_dGKoaFX61K2zjyYWyOPc5sr1mei8wgWvY_e0Q-44gmTQ">
+<div>
+<h1 class="font-display text-headline-md text-primary font-bold">GramUdyam</h1>
+<p class="font-caption text-caption text-on-surface-variant">Rural Advisor</p>
+</div>
+</div>
+<ul class="flex flex-col gap-1 flex-1">
+<li class="rounded-lg hover:bg-surface-container-high transition-colors text-on-surface-variant font-medium">
+<a class="flex items-center gap-3 px-sm py-sm rounded-lg w-full text-left" href="#">
+<span class="material-symbols-outlined text-[20px]">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+</li>
+<li class="rounded-lg hover:bg-surface-container-high transition-colors text-on-surface-variant font-medium">
+<a class="flex items-center gap-3 px-sm py-sm rounded-lg w-full text-left" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span class="font-label-md text-label-md">Start Analysis</span>
+</a>
+</li>
+<li class="rounded-lg hover:bg-surface-container-high transition-colors text-on-surface-variant font-medium">
+<a class="flex items-center gap-3 px-sm py-sm rounded-lg w-full text-left" href="#">
+<span class="material-symbols-outlined text-[20px]">insights</span>
+<span class="font-label-md text-label-md">Market Opportunity</span>
+</a>
+</li>
+<li class="rounded-lg hover:bg-surface-container-high transition-colors text-on-surface-variant font-medium">
+<a class="flex items-center gap-3 px-sm py-sm rounded-lg w-full text-left" href="#">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+<span class="font-label-md text-label-md">Competitors</span>
+</a>
+</li>
+<li class="rounded-lg text-primary font-bold border-r-4 border-primary bg-primary-container/10">
+<a class="flex items-center gap-3 px-sm py-sm w-full text-left" href="#">
+<span class="material-symbols-outlined text-[20px]">compare_arrows</span>
+<span class="font-label-md text-label-md">Business Comparison</span>
+</a>
+</li>
+<li class="rounded-lg hover:bg-surface-container-high transition-colors text-on-surface-variant font-medium">
+<a class="flex items-center gap-3 px-sm py-sm rounded-lg w-full text-left" href="#">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+<span class="font-label-md text-label-md">Financial Plan</span>
+</a>
+</li>
+<li class="rounded-lg hover:bg-surface-container-high transition-colors text-on-surface-variant font-medium">
+<a class="flex items-center gap-3 px-sm py-sm rounded-lg w-full text-left" href="#">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+<span class="font-label-md text-label-md">Risk &amp; Cash Flow</span>
+</a>
+</li>
+<li class="rounded-lg hover:bg-surface-container-high transition-colors text-on-surface-variant font-medium">
+<a class="flex items-center gap-3 px-sm py-sm rounded-lg w-full text-left" href="#">
+<span class="material-symbols-outlined text-[20px]">description</span>
+<span class="font-label-md text-label-md">Business Report</span>
+</a>
+</li>
+<li class="rounded-lg hover:bg-surface-container-high transition-colors text-on-surface-variant font-medium">
+<a class="flex items-center gap-3 px-sm py-sm rounded-lg w-full text-left" href="#">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+<span class="font-label-md text-label-md">Voice Assistant</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto">
+<button class="w-full flex items-center justify-center gap-2 bg-secondary text-on-secondary px-md py-sm rounded-lg font-label-md text-label-md interaction-sink transition-all">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+                Talk to Advisor
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- Top App Bar (Mobile & Desktop) -->
+<header class="flex justify-between items-center w-full px-margin-mobile md:px-md py-sm sticky top-0 z-30 bg-surface/90 backdrop-blur-sm shadow-sm transition-all duration-300">
+<div class="flex items-center gap-3 md:hidden">
+<img class="w-8 h-8 object-contain" data-alt="A simple iconic logo of GramUdyam in green, conveying growth and community." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBose5V3RfXb_E1y33UgNO6OlP6qDHojeN2DxQBzZo6Ra9z6AslJe3qu94VZ-zZz7np7zxyamIZSLZlXCw9jmvz7fHRgaaL9k8osvnOzp6L2sT9KJ7trqQK5-rM-6i9jpt00ybfBDkZxKPHIH2X9-OyrFazpMvgvzgK3Vc-s6exsGwZKLU0rzvZaTtnPGMg6KigzO_FXltBvNbyV_2n8R_46T50kXuX52tvGnLjLz0NEbkqIqyuChL6Eg">
+<h1 class="font-display text-headline-lg-mobile md:hidden text-primary font-bold">GramUdyam</h1>
+</div>
+<div class="hidden md:flex items-center">
+<h2 class="font-headline-md text-headline-md text-on-surface">Hyper-Local SWOT</h2>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high interaction-sink">
+<span class="material-symbols-outlined text-[24px]">language</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high interaction-sink">
+<span class="material-symbols-outlined text-[24px]">help</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high interaction-sink">
+<span class="material-symbols-outlined text-[24px]">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Canvas -->
+<div class="p-margin-mobile md:p-md lg:p-lg flex-1 overflow-y-auto max-w-7xl w-full mx-auto pb-32 md:pb-lg">
+<div class="mb-lg">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-xs">Dairy Business Analysis</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Hyper-local strategic overview for village-level implementation.</p>
+<div class="flex flex-wrap gap-2 mt-sm">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-primary-container/20 text-on-primary-fixed-variant font-label-md text-caption">Sector: Agriculture</span>
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container/20 text-on-secondary-fixed-variant font-label-md text-caption">Location: Rural Sub-district</span>
+</div>
+</div>
+<!-- Bento Grid SWOT -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md md:gap-lg">
+<!-- Strengths -->
+<div class="bg-surface-container-lowest rounded-xl p-md glow-shadow relative overflow-hidden border-l-4 border-primary">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl text-primary">trending_up</span>
+</div>
+<div class="flex items-center gap-3 mb-sm relative z-10">
+<div class="w-10 h-10 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Strengths</h3>
+</div>
+<ul class="space-y-4 relative z-10 mt-md">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1 text-[20px]">check</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">High Cattle Density</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">The village currently supports over 500 active dairy cattle, ensuring a steady, high-volume milk supply locally.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1 text-[20px]">check</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Captive Local Demand</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Consistent daily demand for fresh milk and primary byproducts (curd, ghee) within a 5km radius without complex logistics.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Weaknesses -->
+<div class="bg-surface-container-lowest rounded-xl p-md glow-shadow relative overflow-hidden border-l-4 border-error">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl text-error">trending_down</span>
+</div>
+<div class="flex items-center gap-3 mb-sm relative z-10">
+<div class="w-10 h-10 rounded-full bg-error-container/20 flex items-center justify-center text-error">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">remove_circle</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Weaknesses</h3>
+</div>
+<ul class="space-y-4 relative z-10 mt-md">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error mt-1 text-[20px]">close</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Limited Cold Storage Capital</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">High upfront costs for commercial chillers limit holding capacity, forcing immediate sales and reducing bargaining power.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error mt-1 text-[20px]">close</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Fragmented Competition</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Presence of numerous small-scale, unorganized sellers makes it difficult to establish premium pricing for quality.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Opportunities -->
+<div class="bg-surface-container-lowest rounded-xl p-md glow-shadow relative overflow-hidden border-l-4 border-tertiary">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl text-tertiary">lightbulb</span>
+</div>
+<div class="flex items-center gap-3 mb-sm relative z-10">
+<div class="w-10 h-10 rounded-full bg-tertiary-container/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Opportunities</h3>
+</div>
+<ul class="space-y-4 relative z-10 mt-md">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary mt-1 text-[20px]">arrow_forward</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Urban Delivery Gap</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Nearby semi-urban centers lack reliable 'farm-to-home' organic milk delivery services, presenting a high-margin expansion route.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary mt-1 text-[20px]">arrow_forward</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Value-Added Processing</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Utilizing surplus raw milk for higher-margin products like artisanal paneer or packaged sweets during festival seasons.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Threats -->
+<div class="bg-surface-container-lowest rounded-xl p-md glow-shadow relative overflow-hidden border-l-4 border-secondary">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl text-secondary">warning</span>
+</div>
+<div class="flex items-center gap-3 mb-sm relative z-10">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Threats</h3>
+</div>
+<ul class="space-y-4 relative z-10 mt-md">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1 text-[20px]">error</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Fodder Seasonality</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Dry summer months severely reduce natural grazing, spiking commercial fodder costs and compressing profit margins.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1 text-[20px]">error</span>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Cooperative Price Wars</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Large state cooperatives may temporarily drop procurement prices, squeezing independent operators who cannot absorb the loss.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<!-- AI Advisor Insight Card -->
+<div class="mt-lg bg-surface-container-lowest rounded-xl p-md glow-shadow border-l-4 border-primary flex flex-col md:flex-row gap-md items-start">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[28px]">psychology</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">GramUdyam Advisor Insight</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                         For this village dairy profile, your immediate strategic focus should be securing small-scale cold storage (Weakness mitigation) to capitalize on the Urban Delivery Gap (Opportunity). Avoid engaging in price wars with local unorganized sellers; instead, focus on consistent quality for a slightly premium captive audience.
+                     </p>
+<button class="bg-primary text-on-primary px-md py-sm rounded-full font-label-md text-label-md interaction-sink transition-all inline-flex items-center gap-2 h-[48px]">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+                        Adjust Parameters
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile Bottom Navigation -->
+<nav class="md:hidden fixed bottom-0 w-full bg-surface shadow-[0_-2px_10px_rgba(0,0,0,0.05)] z-50 flex justify-around items-center py-2 px-4 pb-safe">
+<a class="flex flex-col items-center gap-1 p-2 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="font-caption text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">analytics</span>
+<span class="font-caption text-[10px]">Analysis</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-primary font-bold" href="#">
+<div class="bg-primary-container/20 rounded-full p-1 px-4 mb-1">
+<span class="material-symbols-outlined text-[24px]">compare_arrows</span>
+</div>
+<span class="font-caption text-[10px]">Compare</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">account_balance_wallet</span>
+<span class="font-caption text-[10px]">Finance</span>
+</a>
+</nav>
+<script src="../app.js"></script>
+</body></html>
+

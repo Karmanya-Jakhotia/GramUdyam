@@ -1,0 +1,365 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>GramUdyam - Risk Radar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#30312e",
+                        "on-secondary-fixed": "#390c00",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#eae8e4",
+                        "secondary-fixed": "#ffdbd0",
+                        "tertiary-container": "#674b00",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#783116",
+                        "surface-container-low": "#f5f3ef",
+                        "on-background": "#1b1c1a",
+                        "surface-container-highest": "#e4e2de",
+                        "on-secondary-container": "#762f15",
+                        "surface-bright": "#fbf9f5",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#2d5a27",
+                        "surface": "#fbf9f5",
+                        "on-primary-container": "#9dd090",
+                        "background": "#fbf9f5",
+                        "on-primary-fixed-variant": "#23501e",
+                        "surface-variant": "#e4e2de",
+                        "secondary": "#96472b",
+                        "secondary-container": "#fe9977",
+                        "tertiary": "#4b3600",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#002201",
+                        "surface-dim": "#dbdad6",
+                        "tertiary-fixed": "#ffdea0",
+                        "outline": "#72796e",
+                        "inverse-on-surface": "#f2f0ed",
+                        "on-tertiary-fixed": "#261900",
+                        "secondary-fixed-dim": "#ffb59c",
+                        "surface-container": "#efeeea",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#f1ba36",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#c2c9bb",
+                        "primary-fixed-dim": "#a1d494",
+                        "primary": "#154212",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1b1c1a",
+                        "inverse-primary": "#a1d494",
+                        "surface-tint": "#3b6934",
+                        "tertiary-fixed-dim": "#f6be3b",
+                        "on-surface-variant": "#42493e",
+                        "primary-fixed": "#bcf0ae"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "margin-mobile": "20px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "margin-desktop": "120px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Outfit"],
+                        "body-md": ["Outfit"],
+                        "caption": ["Outfit"],
+                        "label-md": ["Outfit"],
+                        "display": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "headline-md": ["Outfit"],
+                        "headline-lg": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-shadow {
+            box-shadow: 0 4px 20px rgba(21, 66, 18, 0.15);
+        }
+        .card-press:active {
+            transform: scale(0.98);
+            box-shadow: 0 2px 10px rgba(21, 66, 18, 0.1);
+            background-color: var(--tw-colors-surface-container-lowest);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden bg-surface text-on-surface font-body-md min-h-screen flex flex-col md:flex-row">
+<!-- Desktop SideNavBar -->
+<nav class="h-screen w-64 fixed left-0 top-0 bg-surface dark:bg-surface-dim shadow-sm flex flex-col py-md px-base bg-surface-container-low dark:bg-surface-container hidden md:flex z-50">
+<div class="mb-lg px-sm">
+<h1 class="font-display text-display text-primary dark:text-primary-fixed-dim tracking-tight">Gram<div>Udyam</div></h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Rural Advisor</p>
+</div>
+<ul class="flex flex-col gap-xs flex-grow">
+<li class="">
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Start Analysis</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-label-md text-label-md">Market Opportunity</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-label-md text-label-md">Competitors</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="compare_arrows">compare_arrows</span>
+<span class="font-label-md text-label-md">Business Comparison</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-label-md text-label-md">Financial Plan</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-primary font-bold border-r-4 border-primary bg-primary-container/10 hover:bg-surface-container-high transition-colors Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined icon-fill" data-icon="warning">warning</span>
+<span class="font-label-md text-label-md">Risk &amp; Cash Flow</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-label-md text-label-md">Business Report</span>
+</a>
+</li>
+<li class="">
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="mic">mic</span>
+<span class="font-label-md text-label-md">Voice Assistant</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar Desktop -->
+<header class="hidden md:flex justify-between items-center w-full px-md py-sm sticky top-0 z-40 bg-surface dark:bg-surface-dim shadow-sm">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">
+                GramUdyam
+            </div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-colors Active: opacity-80 p-sm rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors Active: opacity-80 p-sm rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors Active: opacity-80 p-sm rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-md py-sm rounded-full hover:bg-surface-tint transition-colors h-[48px]">
+                    Talk to GramUdyam
+                </button>
+</div>
+</header>
+<!-- TopAppBar Mobile -->
+<header class="md:hidden flex justify-between items-center w-full px-margin-mobile py-sm sticky top-0 z-40 bg-surface shadow-sm">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">
+                GramUdyam
+            </div>
+<button class="text-on-surface-variant p-sm rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</header>
+<!-- Canvas Content -->
+<div class="flex-1 p-margin-mobile md:p-lg md:max-w-7xl mx-auto w-full flex flex-col gap-lg">
+<section class="flex flex-col gap-sm">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">Risk Radar</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Identify and mitigate potential challenges for your dairy business.</p>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter md:gap-md">
+<!-- Radar Chart Container -->
+<div class="col-span-1 lg:col-span-5 bg-surface-container-lowest rounded-xl glow-shadow p-md flex flex-col items-center justify-center relative min-h-[400px]">
+<h3 class="font-headline-md text-headline-md text-on-surface w-full text-left mb-md">Risk Exposure</h3>
+<!-- Simplified CSS Radar Representation for visual structure -->
+<div class="relative w-[280px] h-[280px] rounded-full border border-outline-variant flex items-center justify-center">
+<div class="absolute w-[200px] h-[200px] rounded-full border border-outline-variant/50"></div>
+<div class="absolute w-[120px] h-[120px] rounded-full border border-outline-variant/30"></div>
+<!-- Axes -->
+<div class="absolute w-full h-[1px] bg-outline-variant/50 rotate-[0deg]"></div>
+<div class="absolute w-full h-[1px] bg-outline-variant/50 rotate-[60deg]"></div>
+<div class="absolute w-full h-[1px] bg-outline-variant/50 rotate-[120deg]"></div>
+<!-- Data Polygon (Approximation) -->
+<svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100">
+<polygon fill="rgba(21, 66, 18, 0.2)" points="50,20 80,40 70,80 30,90 15,50 35,25" stroke="#154212" stroke-linejoin="round" stroke-width="2"></polygon>
+</svg>
+<!-- Labels -->
+<span class="absolute top-[-25px] font-label-md text-label-md text-on-surface-variant">Seasonality</span>
+<span class="absolute top-[20%] right-[-40px] font-label-md text-label-md text-on-surface-variant">Pricing</span>
+<span class="absolute bottom-[20%] right-[-40px] font-label-md text-label-md text-on-surface-variant">Finance</span>
+<span class="absolute bottom-[-25px] font-label-md text-label-md text-on-surface-variant">Transport</span>
+<span class="absolute bottom-[20%] left-[-45px] font-label-md text-label-md text-on-surface-variant">Supply</span>
+<span class="absolute top-[20%] left-[-55px] font-label-md text-label-md text-on-surface-variant">Competition</span>
+</div>
+</div>
+<!-- Risk Categories Bento -->
+<div class="col-span-1 lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-gutter md:gap-md">
+<!-- High Risk Card -->
+<details class="bg-surface-container-lowest rounded-xl glow-shadow border-l-4 border-error overflow-hidden group cursor-pointer transition-all open:pb-md">
+<summary class="p-md flex items-center justify-between list-none outline-none card-press">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined icon-fill" data-icon="thermostat">thermostat</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-bold text-lg">Seasonality</h4>
+<p class="font-caption text-caption text-error font-medium">High Risk</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-md pt-xs flex flex-col gap-sm">
+<div class="bg-surface-container-low p-sm rounded-lg">
+<span class="font-label-md text-label-md text-on-surface-variant block mb-xs">Why it matters:</span>
+<p class="font-body-md text-body-md text-on-surface">Summer months significantly reduce milk yield while fodder prices peak due to water scarcity.</p>
+</div>
+<div class="bg-primary-container/10 border border-primary/20 p-sm rounded-lg flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary mt-xs" data-icon="lightbulb">lightbulb</span>
+<div>
+<span class="font-label-md text-label-md text-primary font-bold block mb-xs">Suggested Action:</span>
+<p class="font-body-md text-body-md text-on-surface">Keep a working-capital reserve of ₹15,000 for May-July fodder spikes.</p>
+</div>
+</div>
+</div>
+</details>
+<!-- Medium Risk Card -->
+<details class="bg-surface-container-lowest rounded-xl glow-shadow border-l-4 border-tertiary-fixed-dim overflow-hidden group cursor-pointer transition-all open:pb-md">
+<summary class="p-md flex items-center justify-between list-none outline-none card-press">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined icon-fill" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-bold text-lg">Transport</h4>
+<p class="font-caption text-caption text-on-tertiary-container font-medium">Medium Risk</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-md pt-xs flex flex-col gap-sm">
+<div class="bg-surface-container-low p-sm rounded-lg">
+<span class="font-label-md text-label-md text-on-surface-variant block mb-xs">Why it matters:</span>
+<p class="font-body-md text-body-md text-on-surface">Monsoon rains can block local village roads, delaying morning milk delivery to collection centers.</p>
+</div>
+<div class="bg-primary-container/10 border border-primary/20 p-sm rounded-lg flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary mt-xs" data-icon="lightbulb">lightbulb</span>
+<div>
+<span class="font-label-md text-label-md text-primary font-bold block mb-xs">Suggested Action:</span>
+<p class="font-body-md text-body-md text-on-surface">Identify secondary route via elevated dirt track; invest in better insulated cans.</p>
+</div>
+</div>
+</div>
+</details>
+<!-- Low Risk Card -->
+<details class="bg-surface-container-lowest rounded-xl glow-shadow border-l-4 border-primary overflow-hidden group cursor-pointer transition-all open:pb-md">
+<summary class="p-md flex items-center justify-between list-none outline-none card-press">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined icon-fill" data-icon="currency_rupee">currency_rupee</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-bold text-lg">Finance</h4>
+<p class="font-caption text-caption text-primary font-medium">Low Risk</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-md pt-xs flex flex-col gap-sm">
+<div class="bg-surface-container-low p-sm rounded-lg">
+<span class="font-label-md text-label-md text-on-surface-variant block mb-xs">Status:</span>
+<p class="font-body-md text-body-md text-on-surface">Current loan terms are manageable and cash flow covers EMI comfortably.</p>
+</div>
+</div>
+</details>
+<!-- Low Risk Card -->
+<details class="bg-surface-container-lowest rounded-xl glow-shadow border-l-4 border-primary overflow-hidden group cursor-pointer transition-all open:pb-md">
+<summary class="p-md flex items-center justify-between list-none outline-none card-press">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined icon-fill" data-icon="storefront">storefront</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-bold text-lg">Competition</h4>
+<p class="font-caption text-caption text-primary font-medium">Low Risk</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-md pt-xs flex flex-col gap-sm">
+<div class="bg-surface-container-low p-sm rounded-lg">
+<span class="font-label-md text-label-md text-on-surface-variant block mb-xs">Status:</span>
+<p class="font-body-md text-body-md text-on-surface">Local demand exceeds current supply; direct competition is minimal.</p>
+</div>
+</div>
+</details>
+</div>
+</div>
+<!-- Advisor Verified Note -->
+<div class="bg-surface-container-lowest rounded-xl glow-shadow border-l-4 border-primary p-md mt-sm flex items-start gap-md">
+<div class="bg-primary-container text-on-primary-container p-sm rounded-full shrink-0">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+</div>
+<div>
+<h5 class="font-label-md text-label-md text-on-surface font-bold mb-xs">Advisor Insight</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">Based on local agricultural data from the last 3 years, the fodder price spike in May is highly predictable. Establishing the recommended working-capital reserve is critical for uninterrupted operations.</p>
+</div>
+</div>
+</div>
+</main>
+
+
+<script src="../app.js"></script>
+</body></html>
+

@@ -1,0 +1,480 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>GramUdyam - Financial Plan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#30312e",
+                        "on-secondary-fixed": "#390c00",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#eae8e4",
+                        "secondary-fixed": "#ffdbd0",
+                        "tertiary-container": "#674b00",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#783116",
+                        "surface-container-low": "#f5f3ef",
+                        "on-background": "#1b1c1a",
+                        "surface-container-highest": "#e4e2de",
+                        "on-secondary-container": "#762f15",
+                        "surface-bright": "#fbf9f5",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#2d5a27",
+                        "surface": "#fbf9f5",
+                        "on-primary-container": "#9dd090",
+                        "background": "#fbf9f5",
+                        "on-primary-fixed-variant": "#23501e",
+                        "surface-variant": "#e4e2de",
+                        "secondary": "#96472b",
+                        "secondary-container": "#fe9977",
+                        "tertiary": "#4b3600",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#002201",
+                        "surface-dim": "#dbdad6",
+                        "tertiary-fixed": "#ffdea0",
+                        "outline": "#72796e",
+                        "inverse-on-surface": "#f2f0ed",
+                        "on-tertiary-fixed": "#261900",
+                        "secondary-fixed-dim": "#ffb59c",
+                        "surface-container": "#efeeea",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#f1ba36",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#c2c9bb",
+                        "primary-fixed-dim": "#a1d494",
+                        "primary": "#154212",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1b1c1a",
+                        "inverse-primary": "#a1d494",
+                        "surface-tint": "#3b6934",
+                        "tertiary-fixed-dim": "#f6be3b",
+                        "on-surface-variant": "#42493e",
+                        "primary-fixed": "#bcf0ae"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xl": "64px",
+                        "margin-mobile": "20px",
+                        "md": "24px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "margin-desktop": "120px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Outfit"],
+                        "body-md": ["Outfit"],
+                        "caption": ["Outfit"],
+                        "label-md": ["Outfit"],
+                        "display": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "headline-md": ["Outfit"],
+                        "headline-lg": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "display": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom scrollbar for better UI */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #c2c9bb; /* outline-variant */
+            border-radius: 9999px;
+            border: 2px solid #fbf9f5; /* surface */
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex text-body-md font-body-md overflow-x-hidden">
+<!-- Desktop SideNavBar (Hidden on Mobile) -->
+<nav class="hidden md:flex h-screen w-64 fixed left-0 top-0 bg-surface dark:bg-surface-dim shadow-sm flex-col h-full py-md px-base z-40 bg-surface-container-low dark:bg-surface-container">
+<div class="mb-lg px-4 pt-4">
+<h1 class="font-display text-display text-primary dark:text-primary-fixed-dim">GramUdyam</h1>
+<p class="text-on-surface-variant font-label-md text-label-md mt-1">Rural Advisor</p>
+</div>
+<div class="flex-1 flex flex-col gap-2 overflow-y-auto w-full">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Start Analysis</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-label-md text-label-md">Market Opportunity</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-label-md text-label-md">Competitors</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="compare_arrows">compare_arrows</span>
+<span class="font-label-md text-label-md">Business Comparison</span>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary font-bold border-r-4 border-primary bg-primary-container/10" href="#">
+<span class="material-symbols-outlined fill" data-icon="account_balance_wallet" data-weight="fill">account_balance_wallet</span>
+<span class="font-label-md text-label-md">Financial Plan</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<span class="font-label-md text-label-md">Risk &amp; Cash Flow</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-label-md text-label-md">Business Report</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="mic">mic</span>
+<span class="font-label-md text-label-md">Voice Assistant</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar (Web) -->
+<header class="hidden md:flex flex justify-between items-center w-full px-md py-sm sticky top-0 z-30 bg-surface shadow-sm">
+<h2 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">GramUdyam</h2>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+<button class="p-2 rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="p-2 rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+<button class="px-6 py-3 bg-primary text-on-primary rounded-full font-label-md text-label-md shadow-sm hover:opacity-90 transition-opacity flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="mic">mic</span>
+                    Talk to GramUdyam
+                </button>
+</div>
+</header>
+<!-- Mobile Header (Simplified) -->
+<header class="md:hidden flex justify-between items-center w-full px-margin-mobile py-4 sticky top-0 z-30 bg-surface bg-opacity-95 backdrop-blur-sm border-b border-surface-variant">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Financial Plan</h1>
+<button class="p-2 rounded-full text-on-surface-variant bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</header>
+<!-- Canvas / Page Content -->
+<div class="flex-1 p-margin-mobile md:p-lg max-w-[1280px] mx-auto w-full">
+<div class="mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2 hidden md:block">EMI &amp; Repayment Timeline</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">Review the projected repayment schedule for your dairy business loan, including the initial moratorium period.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-md">
+<!-- Main Chart Card - Spans 8 cols on desktop -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_20px_rgba(21,66,18,0.05)] border border-surface-container">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Repayment Trajectory</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">5-year projection (₹3,00,000 Loan at 8% p.a.)</p>
+</div>
+<div class="flex gap-2">
+<span class="inline-flex items-center gap-1 px-3 py-1 bg-surface-container-low rounded-full font-label-md text-label-md text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Balance
+                            </span>
+<span class="inline-flex items-center gap-1 px-3 py-1 bg-surface-container-low rounded-full font-label-md text-label-md text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary"></span> EMI
+                            </span>
+</div>
+</div>
+<div class="h-64 sm:h-80 w-full relative">
+<canvas id="repaymentChart"></canvas>
+</div>
+</div>
+<!-- Summary Cards - Spans 4 cols on desktop -->
+<div class="lg:col-span-4 flex flex-col gap-gutter lg:gap-md">
+<!-- Insight/Advice Card -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_20px_rgba(21,66,18,0.05)] border-l-4 border-l-primary relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl text-primary" data-icon="lightbulb">lightbulb</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Advisor Note</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-4">
+                                You have a <strong>6-month moratorium</strong> before payments begin. Use this time to stabilize milk production and build cash reserves.
+                            </p>
+<div class="bg-primary-container/20 rounded-lg p-3">
+<span class="block font-caption text-caption text-on-surface-variant mb-1">Estimated quarterly payment:</span>
+<span class="font-headline-md text-headline-md text-primary">₹18,250</span>
+</div>
+</div>
+</div>
+<!-- Breakdown Card -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_20px_rgba(21,66,18,0.05)] border border-surface-container flex-1">
+<h3 class="font-label-md text-label-md text-on-surface font-semibold mb-4 border-b border-surface-variant pb-2">Quarterly Breakdown (Avg)</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="font-body-md text-body-md text-on-surface-variant">Principal</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">₹12,400</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-tertiary"></div>
+<span class="font-body-md text-body-md text-on-surface-variant">Interest</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">₹5,850</span>
+</div>
+<div class="pt-3 border-t border-surface-variant border-dashed flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface font-bold">Total EMI</span>
+<span class="font-label-md text-label-md text-primary font-bold">₹18,250</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Timeline / Phases Section - Full width -->
+<div class="lg:col-span-12 bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_20px_rgba(21,66,18,0.05)] border border-surface-container mt-4">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6">Repayment Phases</h3>
+<div class="relative">
+<!-- Connecting Line -->
+<div class="absolute left-[28px] top-8 bottom-8 w-0.5 bg-surface-variant hidden sm:block"></div>
+<div class="flex flex-col gap-6">
+<!-- Phase 1 -->
+<div class="relative flex flex-col sm:flex-row gap-4 sm:gap-6 z-10">
+<div class="flex-none sm:w-16 flex justify-start sm:justify-center">
+<div class="w-14 h-14 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined" data-icon="pause_circle">pause_circle</span>
+</div>
+</div>
+<div class="flex-1 bg-surface-bright rounded-lg p-4 border border-surface-variant">
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+<h4 class="font-label-md text-label-md text-on-surface font-bold text-lg">Moratorium Period</h4>
+<span class="inline-block mt-1 sm:mt-0 font-caption text-caption text-secondary font-medium bg-secondary-fixed px-2 py-1 rounded-md">Months 1-6</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">No principal repayment required. Interest accrues during this time. Focus on setting up sheds and purchasing cattle.</p>
+</div>
+</div>
+<!-- Phase 2 -->
+<div class="relative flex flex-col sm:flex-row gap-4 sm:gap-6 z-10">
+<div class="flex-none sm:w-16 flex justify-start sm:justify-center">
+<div class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined" data-icon="update">update</span>
+</div>
+</div>
+<div class="flex-1 bg-surface-bright rounded-lg p-4 border border-surface-variant">
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+<h4 class="font-label-md text-label-md text-on-surface font-bold text-lg">Quarterly Repayment</h4>
+<span class="inline-block mt-1 sm:mt-0 font-caption text-caption text-primary font-medium bg-primary-container/20 px-2 py-1 rounded-md">Q3 Onwards (Months 7-60)</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-3">Regular EMI payments begin based on quarterly intervals to align with expected dairy revenue cycles.</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface p-3 rounded inset-border">
+<span class="block font-caption text-caption text-on-surface-variant">Q3 Payment Date</span>
+<span class="block font-label-md text-label-md text-on-surface">Oct 15, 2024</span>
+</div>
+<div class="bg-surface p-3 rounded inset-border">
+<span class="block font-caption text-caption text-on-surface-variant">Q4 Payment Date</span>
+<span class="block font-label-md text-label-md text-on-surface">Jan 15, 2025</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Phase 3 -->
+<div class="relative flex flex-col sm:flex-row gap-4 sm:gap-6 z-10">
+<div class="flex-none sm:w-16 flex justify-start sm:justify-center">
+<div class="w-14 h-14 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shadow-sm border border-outline-variant">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+</div>
+</div>
+<div class="flex-1 bg-surface-bright rounded-lg p-4 border border-surface-variant opacity-80">
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+<h4 class="font-label-md text-label-md text-on-surface font-bold text-lg">Loan Completion</h4>
+<span class="inline-block mt-1 sm:mt-0 font-caption text-caption text-on-surface-variant font-medium bg-surface-variant px-2 py-1 rounded-md">Year 5</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Full repayment of principal and interest. Business assets fully owned.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="lg:col-span-12 flex justify-center mt-4 mb-lg">
+<button class="min-h-[56px] px-8 py-3 bg-primary text-on-primary rounded-full font-label-md text-label-md shadow-md hover:bg-surface-tint hover:shadow-lg transition-all active:scale-[0.98] flex items-center justify-center gap-2 w-full sm:w-auto">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+                        Download Repayment Schedule
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full bg-surface border-t border-surface-variant shadow-[0_-4px_10px_rgba(0,0,0,0.05)] z-40 pb-safe">
+<div class="flex justify-around items-center h-16">
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-caption text-[10px] mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-caption text-[10px] mt-1">Analysis</span>
+</a>
+<!-- Active Mobile Tab -->
+<a class="flex flex-col items-center justify-center w-full h-full text-primary relative" href="#">
+<div class="absolute top-0 w-8 h-1 bg-primary rounded-b-full"></div>
+<span class="material-symbols-outlined fill" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-caption text-[10px] mt-1 font-medium">Finance</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-caption text-[10px] mt-1">Report</span>
+</a>
+</div>
+</nav>
+<!-- Chart Configuration Script -->
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const ctx = document.getElementById('repaymentChart').getContext('2d');
+            
+            // Dummy data for decreasing balance and steady EMI after moratorium
+            const labels = ['Y1 Q1', 'Y1 Q2', 'Y1 Q3', 'Y1 Q4', 'Y2 Q2', 'Y3 Q2', 'Y4 Q2', 'Y5 Q2', 'Y5 Q4'];
+            const balanceData = [300000, 306000, 290000, 275000, 220000, 150000, 80000, 20000, 0]; // Simulating moratorium interest then decrease
+            const emiData = [0, 0, 18250, 18250, 18250, 18250, 18250, 18250, 18250];
+
+            // Access Tailwind config colors
+            const primaryColor = '#154212';
+            const tertiaryColor = '#4b3600';
+            const surfaceContainerHigh = '#eae8e4';
+            const primaryFixedDim = '#a1d494';
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            type: 'line',
+                            label: 'Remaining Balance (₹)',
+                            data: balanceData,
+                            borderColor: tertiaryColor,
+                            backgroundColor: tertiaryColor,
+                            borderWidth: 3,
+                            pointBackgroundColor: tertiaryColor,
+                            pointBorderColor: '#ffffff',
+                            pointBorderWidth: 2,
+                            pointRadius: 4,
+                            tension: 0.4,
+                            yAxisID: 'y'
+                        },
+                        {
+                            type: 'bar',
+                            label: 'EMI Payment (₹)',
+                            data: emiData,
+                            backgroundColor: primaryFixedDim,
+                            borderRadius: 4, // Rounded caps
+                            barPercentage: 0.6,
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            display: false // Hidden as we use custom HTML legend
+                        },
+                        tooltip: {
+                            backgroundColor: '#30312e',
+                            titleFont: { family: 'Outfit', size: 14 },
+                            bodyFont: { family: 'Outfit', size: 14 },
+                            padding: 12,
+                            cornerRadius: 8
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                display: false,
+                                drawBorder: false
+                            },
+                            ticks: {
+                                font: { family: 'Outfit', size: 12 },
+                                color: '#42493e'
+                            }
+                        },
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            grid: {
+                                color: surfaceContainerHigh,
+                                drawBorder: false,
+                                borderDash: [5, 5]
+                            },
+                            ticks: {
+                                font: { family: 'Outfit', size: 12 },
+                                color: '#42493e',
+                                callback: function(value) {
+                                    return value >= 1000 ? (value/1000) + 'k' : value;
+                                }
+                            }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: false, // Hide secondary axis visually
+                            position: 'right',
+                            min: 0,
+                            max: 40000 // Scale to make bars look proportional
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+<script src="../app.js"></script>
+</body></html>

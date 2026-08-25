@@ -1,0 +1,360 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>GramUdyam - Market Reach</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#30312e",
+                      "on-secondary-fixed": "#390c00",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-high": "#eae8e4",
+                      "secondary-fixed": "#ffdbd0",
+                      "tertiary-container": "#674b00",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed-variant": "#783116",
+                      "surface-container-low": "#f5f3ef",
+                      "on-background": "#1b1c1a",
+                      "surface-container-highest": "#e4e2de",
+                      "on-secondary-container": "#762f15",
+                      "surface-bright": "#fbf9f5",
+                      "on-secondary": "#ffffff",
+                      "primary-container": "#2d5a27",
+                      "surface": "#fbf9f5",
+                      "on-primary-container": "#9dd090",
+                      "background": "#fbf9f5",
+                      "on-primary-fixed-variant": "#23501e",
+                      "surface-variant": "#e4e2de",
+                      "secondary": "#96472b",
+                      "secondary-container": "#fe9977",
+                      "tertiary": "#4b3600",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#002201",
+                      "surface-dim": "#dbdad6",
+                      "tertiary-fixed": "#ffdea0",
+                      "outline": "#72796e",
+                      "inverse-on-surface": "#f2f0ed",
+                      "on-tertiary-fixed": "#261900",
+                      "secondary-fixed-dim": "#ffb59c",
+                      "surface-container": "#efeeea",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-container": "#f1ba36",
+                      "error": "#ba1a1a",
+                      "outline-variant": "#c2c9bb",
+                      "primary-fixed-dim": "#a1d494",
+                      "primary": "#154212",
+                      "on-tertiary-fixed-variant": "#5c4300",
+                      "on-primary": "#ffffff",
+                      "on-surface": "#1b1c1a",
+                      "inverse-primary": "#a1d494",
+                      "surface-tint": "#3b6934",
+                      "tertiary-fixed-dim": "#f6be3b",
+                      "on-surface-variant": "#42493e",
+                      "primary-fixed": "#bcf0ae"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "sm": "12px",
+                      "lg": "40px",
+                      "xl": "64px",
+                      "margin-mobile": "20px",
+                      "md": "24px",
+                      "xs": "4px",
+                      "base": "8px",
+                      "margin-desktop": "120px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Outfit"
+                      ],
+                      "body-md": [
+                              "Outfit"
+                      ],
+                      "caption": [
+                              "Outfit"
+                      ],
+                      "label-md": [
+                              "Outfit"
+                      ],
+                      "display": [
+                              "Outfit"
+                      ],
+                      "headline-lg-mobile": [
+                              "Outfit"
+                      ],
+                      "headline-md": [
+                              "Outfit"
+                      ],
+                      "headline-lg": [
+                              "Outfit"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      }
+              }
+            },
+          }
+      </script>
+<style>
+        .glowing-shadow {
+            box-shadow: 0 4px 20px 0 rgba(21, 66, 18, 0.15);
+        }
+        .advisor-card-border {
+            border-left: 4px solid theme('colors.primary');
+        }
+      </style>
+</head>
+<body class="overflow-x-hidden bg-background text-on-background h-full font-body-md overflow-hidden flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex h-screen w-64 fixed left-0 top-0 bg-surface shadow-sm flex flex-col py-md px-base z-50 border-r border-surface-container">
+<div class="mb-lg px-sm">
+<h1 class="font-display text-display text-primary leading-tight">GramUdyam</h1>
+<p class="font-caption text-caption text-on-surface-variant">Rural Advisor</p>
+</div>
+<div class="flex-1 overflow-y-auto flex flex-col gap-xs">
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">analytics</span>
+<span class="font-label-md text-label-md">Start Analysis</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-primary font-bold border-r-4 border-primary bg-primary-container/10" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">insights</span>
+<span class="font-label-md text-label-md">Market Opportunity</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">groups</span>
+<span class="font-label-md text-label-md">Competitors</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">compare_arrows</span>
+<span class="font-label-md text-label-md">Business Comparison</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_balance_wallet</span>
+<span class="font-label-md text-label-md">Financial Plan</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">warning</span>
+<span class="font-label-md text-label-md">Risk &amp; Cash Flow</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">description</span>
+<span class="font-label-md text-label-md">Business Report</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">mic</span>
+<span class="font-label-md text-label-md">Voice Assistant</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-64 h-screen overflow-hidden">
+<!-- TopNavBar -->
+<header class="hidden md:flex justify-between items-center w-full px-md py-sm sticky top-0 z-40 bg-surface shadow-sm">
+<div class="flex-1"></div> <!-- Spacer for centering if needed, or search -->
+<div class="flex items-center gap-sm">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">language</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<button class="h-14 px-md rounded-full bg-primary text-on-primary font-label-md text-label-md hover:opacity-90 transition-opacity ml-sm">
+                    Talk to GramUdyam
+                </button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 overflow-y-auto p-margin-mobile md:p-md bg-surface-container-low flex flex-col lg:flex-row gap-md">
+<!-- Left Column: Map & Legend -->
+<div class="flex-1 flex flex-col gap-md">
+<div class="flex items-center justify-between mb-sm">
+<h2 class="font-headline-md text-headline-md text-on-background">Market Reach</h2>
+<div class="flex gap-2">
+<span class="px-3 py-1 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md text-xs">5km</span>
+<span class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md text-xs cursor-pointer hover:bg-surface-container-high">10km</span>
+</div>
+</div>
+<!-- Interactive Map Area -->
+<div class="flex-1 bg-surface-container-lowest rounded-xl glowing-shadow overflow-hidden relative min-h-[400px]">
+<!-- Map Placeholder Image -->
+<img class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-multiply z-0" data-alt="A top-down view of a rural Indian village map, rendered in a modern, minimalistic digital style. The map uses a soft, earthy color palette of light greens, muted terracotta, and cream, consistent with a clean UI design. Gentle topographical lines and distinct zoning areas for markets and residential clusters are visible, illuminated by soft, bright, neutral light. The overall aesthetic is clean, professional, and accessible." data-location="rural india village map" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyMsJHZSRKRFCnCK_i0SmeRjkx_BjK3PT4eY1tbCZGDWVXAYUTotemwJ-D9fNU3JHyZuoQFlk-wyWyT5gEcTU3XkJaDwy7Zl8hjqj1lgDYuraVPmX-6N00eFV9b5RvrxQPtW_JNqklFqY6EsTFSEfpnCt3qb9QbaFCQSJAvbuOH9zfbDzTaR5BLVZ4hCGrz28Vk6Qx_mduEVY_2cPQzGVQbkY0Snn5Kezn0lAb8X7eRMKfzS0v4EkjmQ">
+<!-- Map Overlay Elements (CSS simulated markers) -->
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+<div class="w-4 h-4 rounded-full bg-primary ring-4 ring-primary-container/50 shadow-lg z-10 relative"></div>
+<!-- Radii -->
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full border border-primary/30 bg-primary-container/10 z-0"></div>
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full border border-primary/20 bg-primary-container/5 z-0"></div>
+</div>
+<!-- Competitor Markers -->
+<div class="absolute top-1/3 left-1/4 w-3 h-3 rounded-full bg-secondary shadow-sm"></div>
+<div class="absolute top-2/3 left-2/3 w-3 h-3 rounded-full bg-secondary shadow-sm"></div>
+<!-- Market Markers -->
+<div class="absolute top-1/4 left-1/2 w-3 h-3 rounded-full bg-tertiary-fixed-dim shadow-sm"></div>
+<!-- Legend -->
+<div class="absolute bottom-md right-md bg-surface/90 backdrop-blur-sm p-sm rounded-lg shadow-sm border border-outline-variant/30 flex flex-col gap-xs">
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span class="font-caption text-caption text-on-surface">Your Location</span>
+</div>
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-secondary"></div>
+<span class="font-caption text-caption text-on-surface">Competitors</span>
+</div>
+<div class="flex items-center gap-xs">
+<div class="w-3 h-3 rounded-full bg-tertiary-fixed-dim"></div>
+<span class="font-caption text-caption text-on-surface">Markets</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Data Panels & Advisor Note -->
+<div class="w-full lg:w-96 flex flex-col gap-md">
+<!-- Score Card -->
+<div class="bg-surface-container-lowest p-md rounded-xl glowing-shadow flex items-center gap-md">
+<div class="relative w-20 h-20 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+<path class="text-tertiary-fixed stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3"></path>
+<path class="text-tertiary-fixed-dim stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="78, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<span class="absolute font-headline-md text-headline-md text-on-surface font-bold">78</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Market Reach Score</h3>
+<p class="font-body-md text-body-md text-on-surface mt-1">Strong local presence.</p>
+</div>
+</div>
+<!-- Advisor Note -->
+<div class="bg-surface-container-lowest p-md rounded-xl glowing-shadow advisor-card-border">
+<div class="flex items-center gap-sm mb-2">
+<span class="material-symbols-outlined text-primary">eco</span>
+<h4 class="font-label-md text-label-md text-primary font-semibold">GramUdyam Advisor</h4>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+                        Your business can reach a strong household base within 10 km. Consider localized marketing to capture the immediate 5km radius first.
+                    </p>
+</div>
+<!-- Data Panels -->
+<div class="grid grid-cols-2 gap-sm">
+<!-- Population -->
+<div class="bg-surface-container-lowest p-sm rounded-xl glowing-shadow border border-surface-container">
+<div class="flex items-center gap-2 mb-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">group</span>
+<span class="font-caption text-caption">Population</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-on-surface">12k</span>
+<span class="font-caption text-caption text-on-surface-variant">/ 31k</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-1">5km / 10km</p>
+</div>
+<!-- Households -->
+<div class="bg-surface-container-lowest p-sm rounded-xl glowing-shadow border border-surface-container">
+<div class="flex items-center gap-2 mb-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">house</span>
+<span class="font-caption text-caption">Households</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-on-surface">2.8k</span>
+<span class="font-caption text-caption text-on-surface-variant">/ 7.4k</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-1">5km / 10km</p>
+</div>
+<!-- Competitors -->
+<div class="bg-surface-container-lowest p-sm rounded-xl glowing-shadow border border-surface-container col-span-2">
+<div class="flex items-center gap-2 mb-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">store</span>
+<span class="font-caption text-caption">Known Competitors</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-secondary">8</span>
+<span class="font-caption text-caption text-on-surface-variant">/ 17</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Within 5km / Within 10km</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+
+<script src="../app.js"></script>
+</body></html>
+

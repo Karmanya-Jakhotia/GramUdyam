@@ -1,0 +1,254 @@
+<!DOCTYPE html><html class="h-full" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Business Input - GramUdyam</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#30312e",
+                    "on-secondary-fixed": "#390c00",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#eae8e4",
+                    "secondary-fixed": "#ffdbd0",
+                    "tertiary-container": "#674b00",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#783116",
+                    "surface-container-low": "#f5f3ef",
+                    "on-background": "#1b1c1a",
+                    "surface-container-highest": "#e4e2de",
+                    "on-secondary-container": "#762f15",
+                    "surface-bright": "#fbf9f5",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#2d5a27",
+                    "surface": "#fbf9f5",
+                    "on-primary-container": "#9dd090",
+                    "background": "#fbf9f5",
+                    "on-primary-fixed-variant": "#23501e",
+                    "surface-variant": "#e4e2de",
+                    "secondary": "#96472b",
+                    "secondary-container": "#fe9977",
+                    "tertiary": "#4b3600",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#002201",
+                    "surface-dim": "#dbdad6",
+                    "tertiary-fixed": "#ffdea0",
+                    "outline": "#72796e",
+                    "inverse-on-surface": "#f2f0ed",
+                    "on-tertiary-fixed": "#261900",
+                    "secondary-fixed-dim": "#ffb59c",
+                    "surface-container": "#efeeea",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#f1ba36",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#c2c9bb",
+                    "primary-fixed-dim": "#a1d494",
+                    "primary": "#154212",
+                    "on-tertiary-fixed-variant": "#5c4300",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#1b1c1a",
+                    "inverse-primary": "#a1d494",
+                    "surface-tint": "#3b6934",
+                    "tertiary-fixed-dim": "#f6be3b",
+                    "on-surface-variant": "#42493e",
+                    "primary-fixed": "#bcf0ae"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "sm": "12px",
+                    "lg": "40px",
+                    "xl": "64px",
+                    "margin-mobile": "20px",
+                    "md": "24px",
+                    "xs": "4px",
+                    "base": "8px",
+                    "margin-desktop": "120px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Outfit"],
+                    "body-md": ["Outfit"],
+                    "caption": ["Outfit"],
+                    "label-md": ["Outfit"],
+                    "display": ["Outfit"],
+                    "headline-lg-mobile": ["Outfit"],
+                    "headline-md": ["Outfit"],
+                    "headline-lg": ["Outfit"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Outfit', sans-serif; }
+    </style>
+</head>
+<body class="overflow-x-hidden bg-surface text-on-surface h-full flex flex-col md:flex-row antialiased">
+<!-- Note: TopNav and SideNav are suppressed because this is a transactional onboarding screen (Step 2 of 4). -->
+<main class="flex-1 w-full max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop py-xl flex flex-col h-full overflow-y-auto relative">
+<!-- Step Indicator -->
+<div class="mb-lg">
+<p class="font-label-md text-label-md text-primary mb-xs">Step 2 of 4</p>
+<div class="flex items-center gap-2">
+<div class="h-2 flex-1 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary w-2/4 rounded-full transition-all duration-500 ease-in-out"></div>
+</div>
+</div>
+</div>
+<!-- Header -->
+<header class="mb-lg">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-sm">What business are you thinking about?</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Select a category or tell us what you have in mind.</p>
+</header>
+<!-- Search / Input -->
+<div class="relative mb-lg">
+<div class="absolute inset-y-0 left-0 pl-md flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+</div>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-xl py-md pl-12 pr-md font-body-lg text-body-lg text-on-surface focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm" placeholder="Search or type your business idea..." type="text">
+</div>
+<!-- AI Suggestion Card -->
+<div class="bg-primary-container/10 border-l-4 border-primary p-md rounded-xl mb-xl flex items-start gap-md">
+<span class="material-symbols-outlined text-primary text-3xl shrink-0" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs">Not sure? Let AI suggest businesses for me.</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">We can recommend highly profitable businesses based on your location and budget.</p>
+<button class="bg-surface-container-lowest border border-outline-variant text-primary font-label-md text-label-md px-md py-sm rounded-lg hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="explore">explore</span>
+                    Get Recommendations
+                </button>
+</div>
+</div>
+<!-- Visual Category Grid -->
+<div class="mb-xl">
+<h2 class="font-label-md text-label-md text-on-surface-variant mb-md uppercase tracking-wider">Popular Categories</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-md">
+<!-- Category Card -->
+<button class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col items-center gap-sm hover:border-primary hover:shadow-[0_4px_20px_rgba(21,66,18,0.15)] hover:-translate-y-1 transition-all group">
+<div class="w-16 h-16 rounded-full bg-secondary-fixed/30 flex items-center justify-center text-secondary mb-2 group-hover:bg-secondary-fixed group-hover:text-on-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-3xl" data-icon="water_drop">water_drop</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Dairy</span>
+</button>
+<!-- Category Card -->
+<button class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col items-center gap-sm hover:border-primary hover:shadow-[0_4px_20px_rgba(21,66,18,0.15)] hover:-translate-y-1 transition-all group">
+<div class="w-16 h-16 rounded-full bg-tertiary-fixed/30 flex items-center justify-center text-tertiary mb-2 group-hover:bg-tertiary-fixed group-hover:text-on-tertiary-fixed transition-colors">
+<span class="material-symbols-outlined text-3xl" data-icon="cruelty_free">cruelty_free</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Poultry</span>
+</button>
+<!-- Category Card -->
+<button class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col items-center gap-sm hover:border-primary hover:shadow-[0_4px_20px_rgba(21,66,18,0.15)] hover:-translate-y-1 transition-all group">
+<div class="w-16 h-16 rounded-full bg-primary-fixed/30 flex items-center justify-center text-primary mb-2 group-hover:bg-primary-fixed group-hover:text-on-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-3xl" data-icon="storefront">storefront</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Grocery</span>
+</button>
+<!-- Category Card -->
+<button class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col items-center gap-sm hover:border-primary hover:shadow-[0_4px_20px_rgba(21,66,18,0.15)] hover:-translate-y-1 transition-all group">
+<div class="w-16 h-16 rounded-full bg-secondary-container/30 flex items-center justify-center text-secondary mb-2 group-hover:bg-secondary-container group-hover:text-on-secondary-container transition-colors">
+<span class="material-symbols-outlined text-3xl" data-icon="restaurant_menu">restaurant_menu</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Food Processing</span>
+</button>
+<!-- Category Card -->
+<button class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col items-center gap-sm hover:border-primary hover:shadow-[0_4px_20px_rgba(21,66,18,0.15)] hover:-translate-y-1 transition-all group">
+<div class="w-16 h-16 rounded-full bg-tertiary-container/30 flex items-center justify-center text-tertiary mb-2 group-hover:bg-tertiary-container group-hover:text-on-tertiary-container transition-colors">
+<span class="material-symbols-outlined text-3xl" data-icon="dry_cleaning">dry_cleaning</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Textile</span>
+</button>
+<!-- Category Card -->
+<button class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col items-center gap-sm hover:border-primary hover:shadow-[0_4px_20px_rgba(21,66,18,0.15)] hover:-translate-y-1 transition-all group">
+<div class="w-16 h-16 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant mb-2 group-hover:bg-surface-dim transition-colors">
+<span class="material-symbols-outlined text-3xl" data-icon="more_horiz">more_horiz</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">More</span>
+</button>
+</div>
+</div>
+<!-- Optional Fields (Collapsed via Details/Summary for native behavior without JS) -->
+<details class="group bg-surface-container-lowest border border-outline-variant rounded-xl mb-xl">
+<summary class="font-label-md text-label-md text-on-surface p-md cursor-pointer list-none flex items-center justify-between hover:bg-surface-container-low transition-colors rounded-xl">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline" data-icon="tune">tune</span>
+                    Optional details to refine analysis
+                </span>
+<span class="material-symbols-outlined text-outline group-open:rotate-180 transition-transform" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="p-md pt-0 border-t border-outline-variant/30 mt-2">
+<div class="grid md:grid-cols-2 gap-md mt-sm">
+<!-- Experience -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">Experience in this field</label>
+<select class="w-full bg-surface border border-outline-variant rounded-lg p-sm font-body-md text-body-md text-on-surface focus:ring-1 focus:ring-primary focus:border-primary">
+<option>None</option>
+<option>1-3 years</option>
+<option>3+ years</option>
+</select>
+</div>
+<!-- Own Shop -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">Do you own a shop/land?</label>
+<select class="w-full bg-surface border border-outline-variant rounded-lg p-sm font-body-md text-body-md text-on-surface focus:ring-1 focus:ring-primary focus:border-primary">
+<option>No, will rent</option>
+<option>Yes, I own the space</option>
+</select>
+</div>
+<!-- Scale -->
+<div class="md:col-span-2">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">Planned Scale</label>
+<div class="flex gap-sm">
+<label class="flex-1 cursor-pointer">
+<input checked="" class="peer sr-only" name="scale" type="radio">
+<div class="bg-surface border border-outline-variant rounded-lg p-sm text-center font-label-md text-label-md text-on-surface-variant peer-checked:bg-primary-container/20 peer-checked:border-primary peer-checked:text-primary transition-colors">Micro</div>
+</label>
+<label class="flex-1 cursor-pointer">
+<input class="peer sr-only" name="scale" type="radio">
+<div class="bg-surface border border-outline-variant rounded-lg p-sm text-center font-label-md text-label-md text-on-surface-variant peer-checked:bg-primary-container/20 peer-checked:border-primary peer-checked:text-primary transition-colors">Small</div>
+</label>
+<label class="flex-1 cursor-pointer">
+<input class="peer sr-only" name="scale" type="radio">
+<div class="bg-surface border border-outline-variant rounded-lg p-sm text-center font-label-md text-label-md text-on-surface-variant peer-checked:bg-primary-container/20 peer-checked:border-primary peer-checked:text-primary transition-colors">Medium</div>
+</label>
+</div>
+</div>
+</div>
+</div>
+</details>
+<!-- Navigation Buttons -->
+<div class="mt-auto pt-lg pb-md flex justify-between items-center gap-md">
+<button class="font-label-md text-label-md text-secondary h-14 px-md rounded-xl hover:bg-secondary-fixed/30 transition-colors flex items-center justify-center">
+                Back
+            </button>
+<button class="bg-primary text-on-primary font-label-md text-label-md h-14 px-xl rounded-xl hover:bg-primary/90 transition-colors shadow-sm flex items-center justify-center gap-2">
+                Continue
+                <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</main>
+<script src="../app.js"></script>
+</body></html>
+

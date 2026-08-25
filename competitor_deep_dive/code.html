@@ -1,0 +1,344 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Competitors Map - GramUdyam</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#30312e",
+                      "on-secondary-fixed": "#390c00",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-high": "#eae8e4",
+                      "secondary-fixed": "#ffdbd0",
+                      "tertiary-container": "#674b00",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed-variant": "#783116",
+                      "surface-container-low": "#f5f3ef",
+                      "on-background": "#1b1c1a",
+                      "surface-container-highest": "#e4e2de",
+                      "on-secondary-container": "#762f15",
+                      "surface-bright": "#fbf9f5",
+                      "on-secondary": "#ffffff",
+                      "primary-container": "#2d5a27",
+                      "surface": "#fbf9f5",
+                      "on-primary-container": "#9dd090",
+                      "background": "#fbf9f5",
+                      "on-primary-fixed-variant": "#23501e",
+                      "surface-variant": "#e4e2de",
+                      "secondary": "#96472b",
+                      "secondary-container": "#fe9977",
+                      "tertiary": "#4b3600",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#002201",
+                      "surface-dim": "#dbdad6",
+                      "tertiary-fixed": "#ffdea0",
+                      "outline": "#72796e",
+                      "inverse-on-surface": "#f2f0ed",
+                      "on-tertiary-fixed": "#261900",
+                      "secondary-fixed-dim": "#ffb59c",
+                      "surface-container": "#efeeea",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-container": "#f1ba36",
+                      "error": "#ba1a1a",
+                      "outline-variant": "#c2c9bb",
+                      "primary-fixed-dim": "#a1d494",
+                      "primary": "#154212",
+                      "on-tertiary-fixed-variant": "#5c4300",
+                      "on-primary": "#ffffff",
+                      "on-surface": "#1b1c1a",
+                      "inverse-primary": "#a1d494",
+                      "surface-tint": "#3b6934",
+                      "tertiary-fixed-dim": "#f6be3b",
+                      "on-surface-variant": "#42493e",
+                      "primary-fixed": "#bcf0ae"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "sm": "12px",
+                      "lg": "40px",
+                      "xl": "64px",
+                      "margin-mobile": "20px",
+                      "md": "24px",
+                      "xs": "4px",
+                      "base": "8px",
+                      "margin-desktop": "120px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Outfit"
+                      ],
+                      "body-md": [
+                              "Outfit"
+                      ],
+                      "caption": [
+                              "Outfit"
+                      ],
+                      "label-md": [
+                              "Outfit"
+                      ],
+                      "display": [
+                              "Outfit"
+                      ],
+                      "headline-lg-mobile": [
+                              "Outfit"
+                      ],
+                      "headline-md": [
+                              "Outfit"
+                      ],
+                      "headline-lg": [
+                              "Outfit"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .shadow-glow { box-shadow: 0 4px 20px rgba(21, 66, 18, 0.15); }
+      </style>
+</head>
+<body class="overflow-x-hidden bg-background text-on-background font-body-md min-h-screen flex">
+<!-- SideNavBar (Desktop) -->
+<nav aria-label="Sidebar Navigation" class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface shadow-sm z-40 bg-surface-container-low py-md px-base">
+<div class="mb-lg px-4">
+<h1 class="font-display text-display text-primary">GramUdyam</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Rural Advisor</p>
+</div>
+<ul class="flex flex-col gap-2 flex-grow">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Start Analysis</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-label-md text-label-md">Market Opportunity</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary font-bold border-r-4 border-primary bg-primary-container/10" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-label-md text-label-md">Competitors</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="compare_arrows">compare_arrows</span>
+<span class="font-label-md text-label-md">Business Comparison</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-label-md text-label-md">Financial Plan</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<span class="font-label-md text-label-md">Risk &amp; Cash Flow</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-label-md text-label-md">Business Report</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto pt-4 border-t border-outline-variant">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="mic">mic</span>
+<span class="font-label-md text-label-md">Voice Assistant</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-64 flex flex-col min-h-screen relative w-full overflow-hidden">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center w-full px-md py-sm sticky top-0 z-50 bg-surface shadow-sm">
+<div class="md:hidden">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">GramUdyam</h1>
+</div>
+<div class="hidden md:block">
+<!-- Empty space on desktop for alignment if needed, or breadcrumbs -->
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+<button class="hidden md:flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-full font-label-md text-label-md hover:bg-surface-tint transition-colors">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+                    Talk to GramUdyam
+                </button>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="flex-1 p-margin-mobile md:p-lg overflow-y-auto w-full max-w-[1280px] mx-auto">
+<!-- Header Section -->
+<div class="mb-lg">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Competitor Landscape</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Analyze 17 similar businesses in your proposed operating area to refine your strategy.</p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter md:gap-md">
+<!-- Main Map Card (Spans 8 cols on desktop) -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl shadow-glow overflow-hidden flex flex-col h-[500px] lg:h-auto lg:min-h-[600px] relative">
+<!-- Filters Overlay -->
+<div class="absolute top-4 left-4 right-4 z-10 flex flex-wrap gap-2">
+<button class="bg-surface-container-lowest/90 backdrop-blur-sm border border-outline-variant px-4 py-2 rounded-full font-label-md text-label-md text-on-surface flex items-center gap-2 hover:bg-surface-container-low transition-colors shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-[18px] text-primary">local_drink</span> Dairy
+                        </button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full font-label-md text-label-md flex items-center gap-2 shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span> Grocery
+                        </button>
+<button class="bg-surface-container-lowest/90 backdrop-blur-sm border border-outline-variant px-4 py-2 rounded-full font-label-md text-label-md text-on-surface flex items-center gap-2 hover:bg-surface-container-low transition-colors shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-[18px]">blender</span> Food Processing
+                        </button>
+</div>
+<!-- Map Placeholder -->
+<div class="flex-1 w-full h-full relative bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A highly detailed, stylized map interface shown in an earthy, modern light-mode design. The map depicts a rural or semi-urban area with soft green and beige tones. Several marker pins are visible, styled in primary green and clay terracotta colors, indicating business locations. The style is clean, vector-like, and professional, avoiding cluttered satellite imagery in favor of abstract, clear geographic data visualization suitable for a business dashboard." data-location="rural india map" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjOy3QCOElDkiO6YxsS1kwZMqiZQxvnIqvRUAW1LymzFxrKWFW6cr9MysRQa_ERPEb8rsuUB7zD5p2Xovw_y8I4ce7beTfr02J-x5cN5zS-0-4aghwhWGad45zFhb5y55nyDs9GsNyzLEucXCdVP_h249Ap0EOUtbCnnA4tdICj3AujtITmXnvUbWC1yQZ6A64r6gyVcEr88qjr65tWgWQ6cdKfQIKKNfQTUrWcilA-ZBT3xo8kYnHUA">
+</div>
+</div>
+<!-- Sidebar Metrics & Insights (Spans 4 cols on desktop) -->
+<div class="lg:col-span-4 flex flex-col gap-gutter md:gap-md">
+<!-- Competition Level Card -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-glow">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-4">Competition Level</h3>
+<div class="flex items-end gap-3 mb-2">
+<span class="font-display text-[40px] leading-[48px] font-bold text-tertiary-container">Moderate</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 mb-4">
+<div class="bg-tertiary-container h-2 rounded-full w-[60%]"></div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">The market has established players, but there is clear room for localized, specialized offerings.</p>
+</div>
+<!-- Distance Metrics -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-glow flex flex-col">
+<span class="material-symbols-outlined text-secondary mb-2">near_me</span>
+<span class="font-label-md text-label-md text-on-surface-variant mb-1">Nearest</span>
+<span class="font-headline-md text-headline-md text-on-surface">1.8 km</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-glow flex flex-col">
+<span class="material-symbols-outlined text-primary mb-2">radar</span>
+<span class="font-label-md text-label-md text-on-surface-variant mb-1">Within 5km</span>
+<span class="font-headline-md text-headline-md text-on-surface">6 <span class="text-body-md text-on-surface-variant font-normal">Biz</span></span>
+</div>
+</div>
+<!-- AI Advisor Insight Card -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-glow border-l-4 border-primary relative overflow-hidden flex-1 flex flex-col">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[64px] text-primary">lightbulb</span>
+</div>
+<div class="flex items-center gap-2 mb-4 relative z-10">
+<div class="bg-primary-container/20 p-2 rounded-full">
+<span class="material-symbols-outlined text-primary text-[20px]">psychology</span>
+</div>
+<h3 class="font-label-md text-label-md text-primary font-bold">What this means for you</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface relative z-10 mb-6">
+                            With the nearest competitor almost 2km away, you have a solid local catchment area. To stand out against the moderate competition, <strong>focus on delivery services and value-added organic products</strong> which are currently underserved in this specific radius.
+                        </p>
+<div class="mt-auto relative z-10">
+<button class="w-full bg-secondary text-on-secondary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-secondary-container hover:text-on-secondary-container transition-colors shadow-sm">
+                                View Detailed Comparison
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script src="../app.js"></script>
+</body></html>
+

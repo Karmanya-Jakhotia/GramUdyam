@@ -1,0 +1,288 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>GramUdyam - Rural Advisor</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#30312e",
+                    "on-secondary-fixed": "#390c00",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#eae8e4",
+                    "secondary-fixed": "#ffdbd0",
+                    "tertiary-container": "#674b00",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#783116",
+                    "surface-container-low": "#f5f3ef",
+                    "on-background": "#1b1c1a",
+                    "surface-container-highest": "#e4e2de",
+                    "on-secondary-container": "#762f15",
+                    "surface-bright": "#fbf9f5",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#2d5a27",
+                    "surface": "#fbf9f5",
+                    "on-primary-container": "#9dd090",
+                    "background": "#fbf9f5",
+                    "on-primary-fixed-variant": "#23501e",
+                    "surface-variant": "#e4e2de",
+                    "secondary": "#96472b",
+                    "secondary-container": "#fe9977",
+                    "tertiary": "#4b3600",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#002201",
+                    "surface-dim": "#dbdad6",
+                    "tertiary-fixed": "#ffdea0",
+                    "outline": "#72796e",
+                    "inverse-on-surface": "#f2f0ed",
+                    "on-tertiary-fixed": "#261900",
+                    "secondary-fixed-dim": "#ffb59c",
+                    "surface-container": "#efeeea",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#f1ba36",
+                    "error": "#ba1a1a",
+                    "outline-variant": "#c2c9bb",
+                    "primary-fixed-dim": "#a1d494",
+                    "primary": "#154212",
+                    "on-tertiary-fixed-variant": "#5c4300",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#1b1c1a",
+                    "inverse-primary": "#a1d494",
+                    "surface-tint": "#3b6934",
+                    "tertiary-fixed-dim": "#f6be3b",
+                    "on-surface-variant": "#42493e",
+                    "primary-fixed": "#bcf0ae"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "sm": "12px",
+                    "lg": "40px",
+                    "xl": "64px",
+                    "margin-mobile": "20px",
+                    "md": "24px",
+                    "xs": "4px",
+                    "base": "8px",
+                    "margin-desktop": "120px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Outfit"],
+                    "body-md": ["Outfit"],
+                    "caption": ["Outfit"],
+                    "label-md": ["Outfit"],
+                    "display": ["Outfit"],
+                    "headline-lg-mobile": ["Outfit"],
+                    "headline-md": ["Outfit"],
+                    "headline-lg": ["Outfit"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+        body { font-family: 'Outfit', sans-serif; }
+    </style>
+</head>
+<body class="overflow-x-hidden bg-background text-on-background min-h-screen flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- JSON Component: SideNavBar -->
+<!-- Applying exact style_ keys, adapting fixed positioning and responsiveness -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface dark:bg-surface-dim bg-surface-container-low dark:bg-surface-container shadow-sm hidden md:flex flex-col z-40 border-r border-outline-variant/30">
+<div class="flex flex-col h-full py-md px-base">
+<div class="mb-xl px-sm">
+<h1 class="font-display text-display text-primary dark:text-primary-fixed-dim tracking-tight">Gram<div>Udyam</div></h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Rural Advisor</p>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- ACTIVE TAB: Home -->
+<a class="flex items-center gap-sm px-sm py-3 rounded-lg text-primary font-bold border-l-4 border-primary bg-primary-container/10 Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<!-- INACTIVE TABS -->
+<a class="flex items-center gap-sm px-sm py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-md text-label-md">Start Analysis</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-label-md text-label-md">Market Opportunity</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-md text-label-md">Competitors</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">compare_arrows</span>
+<span class="font-label-md text-label-md">Business Comparison</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-label-md text-label-md">Financial Plan</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">warning</span>
+<span class="font-label-md text-label-md">Risk &amp; Cash Flow</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-md text-label-md">Business Report</span>
+</a>
+</nav>
+<!-- Bottom fixed item from tab list -->
+<div class="mt-auto pt-md border-t border-outline-variant/30">
+<a class="flex items-center gap-sm px-sm py-3 rounded-lg text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">mic</span>
+<span class="font-label-md text-label-md">Voice Assistant</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- JSON Component: TopNavBar -->
+<!-- Responsive adjustments applied while keeping structural intent -->
+<header class="flex justify-between items-center w-full px-md py-sm sticky top-0 z-50 bg-surface dark:bg-surface-dim shadow-sm">
+<!-- Mobile Brand -->
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim md:hidden">
+                GramUdyam
+            </div>
+<div class="flex-1 md:flex-none"></div> <!-- Spacer -->
+<div class="flex items-center gap-sm">
+<!-- Trailing Icon Actions -->
+<button aria-label="language" class="p-2 rounded-full text-on-surface-variant hover:text-primary transition-colors Active: opacity-80">
+<span class="material-symbols-outlined">language</span>
+</button>
+<button aria-label="help" class="p-2 rounded-full text-on-surface-variant hover:text-primary transition-colors Active: opacity-80">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button aria-label="account_circle" class="p-2 rounded-full text-on-surface-variant hover:text-primary transition-colors Active: opacity-80">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<!-- Trailing Primary Action -->
+<button class="hidden lg:flex items-center justify-center h-[48px] px-md rounded-full bg-primary text-on-primary font-label-md text-label-md hover:bg-primary/90 transition-colors shadow-sm ml-sm">
+                    Talk to GramUdyam
+                </button>
+</div>
+</header>
+<!-- Main Canvas Canvas -->
+<main class="flex-1 flex flex-col items-center w-full">
+<!-- Hero Section -->
+<section class="w-full max-w-7xl px-margin-mobile md:px-margin-desktop py-xl md:py-[120px] flex flex-col lg:flex-row items-center gap-xl relative overflow-hidden">
+<!-- Hero Text Content -->
+<div class="flex-1 z-10 flex flex-col items-start text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low border border-outline-variant/50 mb-md">
+<span class="material-symbols-outlined text-primary text-sm">energy_savings_leaf</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Your local enterprise companion</span>
+</div>
+<h2 class="font-display text-display md:text-[64px] md:leading-[72px] text-on-background max-w-2xl text-balance">
+                        Turn Your Business Idea Into a Safer Business Plan.
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-md max-w-xl text-balance">
+                        Tell us your village, your available capital and the business you want to start. GramUdyam checks your local market and creates a financial plan for you.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-sm mt-lg w-full sm:w-auto">
+<!-- Primary CTA -->
+<button class="h-[56px] px-8 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center hover:bg-primary/90 transition-all shadow-md shadow-primary/20">
+                            Start My Business Analysis
+                        </button>
+<!-- Secondary CTA -->
+<button class="h-[56px] px-8 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-secondary-container/80 transition-all">
+<span class="material-symbols-outlined">mic</span>
+                            Talk to GramUdyam
+                        </button>
+</div>
+</div>
+<!-- Hero Imagery / Abstract Visual -->
+<div class="flex-1 w-full relative min-h-[400px] lg:min-h-[500px] rounded-3xl overflow-hidden shadow-sm bg-surface-container-highest">
+<img class="w-full h-full object-cover absolute inset-0 mix-blend-multiply opacity-90" data-alt="A high-quality, professional photograph of a lush green agricultural landscape in rural India during golden hour. The warm sunlight casts a soft, inviting glow over the fields, evoking a sense of growth and potential. The visual style is modern-organic minimalism, featuring a harmonious palette of earthy greens, clay terracotta, and soft cream tones. The composition is clean, expansive, and optimistic, perfectly suited for a modern agri-business SaaS platform hero section." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkLAc7XWHa0SidauT8b8oaBv3la6zwCvgiK65VFQG4T2LkkJUZtypPijybmi1FKIknMOu6CEhaWdyv4Mh6VOSfT6Zgi065vYt4W5y38OCddr6pEdZvxeUuuxlX5DMNi1F5u6ANfVDuI7HAKSjCPwWL-YBEMo45d67AuPR8wjo3bCvLMt_oCS-lAiolZb8sslIRPPhuyP5PGq14Csp1Ro_h60SCuwjF4cMVY0Vnpfv0xKCvX5l16U25-g">
+<!-- Decorative overlay gradient -->
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-overlay"></div>
+</div>
+</section>
+<!-- Bento Grid / Cards Section -->
+<section class="w-full max-w-7xl px-margin-mobile md:px-margin-desktop pb-xl flex flex-col">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1: Local Market -->
+<div class="bg-surface rounded-xl p-md border-l-4 border-primary relative overflow-hidden shadow-[0_4px_20px_rgba(21,66,18,0.08)] flex flex-col h-full group hover:-translate-y-1 transition-transform duration-300">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center mb-md text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">location_on</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">Local Market</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-1">
+                            Analyze demand and existing competition specifically tailored to your village's demographics and geography.
+                        </p>
+<div class="mt-md h-32 w-full rounded-lg bg-surface-container-low overflow-hidden relative">
+<div class="bg-cover bg-center w-full h-full opacity-70 group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist, abstract digital illustration representing local market connectivity. Soft, rounded geometric shapes in shades of deep primary green and warm tertiary gold are connected by subtle, glowing paths on a creamy white background. The style is modern, approachable, and data-inspired without being overly technical, reflecting a calm and trusted advisory tone." style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAzkEYL_quNxcv4DsyX6fV4szbXB-k8piN9o2BS_XI4eulAC9xJTlCR9g9wH9qIHhAQhjzHKVYmg7z2euW8OUV3gF0Z2KaEKtRWrn3xFn5Q1aKyXuMmOveJDDZkJ5bXXMTBONgINNQnEcjDZtt29Mi_0h8TxRyH_CZXX_3pr7WuQQh7SO82qbjuRdhqYhFf6EBCkT68IG1rXsXxNGyOL9zTvFZESsFyln-OqO53LzxlUtKHmK1RKbX18w&quot;);"></div>
+</div>
+</div>
+<!-- Card 2: Financial Fit -->
+<div class="bg-surface rounded-xl p-md border-l-4 border-secondary relative overflow-hidden shadow-[0_4px_20px_rgba(21,66,18,0.08)] flex flex-col h-full group hover:-translate-y-1 transition-transform duration-300">
+<div class="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center mb-md text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">currency_rupee</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">Financial Fit</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-1">
+                            Match your available capital with realistic setup costs, generating a viable step-by-step financial blueprint.
+                        </p>
+<div class="mt-md h-32 w-full rounded-lg bg-surface-container-low overflow-hidden relative">
+<div class="bg-cover bg-center w-full h-full opacity-70 group-hover:scale-105 transition-transform duration-500" data-alt="A serene, well-lit still life photograph of a vintage wooden abacus resting beside a modern tablet displaying soft, blurred data charts. The setting is a rustic yet clean workspace with natural sunlight filtering through, emphasizing textures of wood and clay against a neutral, off-white surface. The color palette features earthy greens and warm terracotta, blending traditional rural elements with modern financial analysis." style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuA8Ngb6dvKEGwoIY38ZzmnZ9tdVh0-vxIimNAMyNAeiU8JzOFy_s9eUlqKsNcj7xieX0cIOHyp_1WWsz3EF26LxxSf9SYuTvWfGShuTdVkXt8fUv-_ic29Dkf3U-tTcYBRoN0akHNzCbNphUPpkvokIfUuJw9YnkWpWoZ5L2_N_T7RQbXUlwY61sYbhvAyXg2FaFk3z8F8iHENfypA9U37dkvVRKKK5P9jxVeZq3MqyLvP3-9MTxK8a5Q&quot;);"></div>
+</div>
+</div>
+<!-- Card 3: Business Risk -->
+<div class="bg-surface rounded-xl p-md border-l-4 border-tertiary-container relative overflow-hidden shadow-[0_4px_20px_rgba(21,66,18,0.08)] flex flex-col h-full group hover:-translate-y-1 transition-transform duration-300">
+<div class="w-12 h-12 rounded-full bg-tertiary-container/10 flex items-center justify-center mb-md text-tertiary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">shield</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">Business Risk</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-1">
+                            Identify potential local hurdles, regulatory checks, and seasonal cash flow risks before you invest.
+                        </p>
+<div class="mt-md h-32 w-full rounded-lg bg-surface-container-low overflow-hidden relative">
+<div class="bg-cover bg-center w-full h-full opacity-70 group-hover:scale-105 transition-transform duration-500" data-alt="A stylized, modern 3D icon of an overlapping shield and a thriving plant sprout, rendered with soft lighting and a matte finish. The colors utilize the design system's primary deep green and warm secondary orange tones. The object sits alone on a clean, soft cream background with a very subtle, diffused drop shadow, conveying security, growth, and organic resilience in business." style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC8dGq7515tl-wGTEmMOfTxz2Cv1qASoalRquBzqj6uBgQwlTtlL0JVCXOrvuDegXmnfOiMKfEU8OqEuG-OoXpZOlcAorSABcCzosJFtKKf8z8fXDdciO8-w0qcijBT4hp5_dYUw1taD8GNZkmUBe_d9083CbuWWuwbnDF2pEZVlBSvw8jOlhJdwoKHkFLbITE_mJRKpvvlYCYjk3xTpvzrAl15fQlMPoEA16atW2ySnTQXGv2eDwVbOw&quot;);"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="w-full max-w-4xl px-margin-mobile mx-auto pb-xl text-center flex flex-col items-center">
+<div class="flex items-center gap-4 text-outline mb-sm opacity-60">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+<span class="material-symbols-outlined text-3xl">account_balance</span>
+<span class="material-symbols-outlined text-3xl">pie_chart</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest opacity-80">
+                    Your decision is based on local market, government and financial data.
+                </p>
+</section>
+</main>
+</div>
+
+
+<script src="../app.js"></script>
+</body></html>
+
